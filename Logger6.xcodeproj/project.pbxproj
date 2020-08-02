@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */; };
+		CEBA6F3E24D6594A008194F8 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */; };
 		CEEF6F9324D64AB50015ED13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */; };
 		CEEF6F9524D64AB50015ED13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */; };
 		CEEF6F9724D64AB50015ED13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6F9624D64AB50015ED13 /* ContentView.swift */; };
@@ -87,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		CEEF6F8F24D64AB50015ED13 /* Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				CEEF6FA024D64AB80015ED13 /* Info.plist */,
 				CEEF6F9A24D64AB80015ED13 /* Preview Content */,
 				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
+				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
 			);
 			path = Logger6;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				CEEF6FDD24D64ABA0015ED13 /* PushNotificationPayload.apns */,
 				CEEF6FD924D64ABA0015ED13 /* Preview Content */,
 				CEEF6FF324D64E4F0015ED13 /* WatchSensorLogger.swift */,
+				CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */,
 			);
 			path = "Logger6 WatchKit Extension";
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEF6F9324D64AB50015ED13 /* AppDelegate.swift in Sources */,
+				CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */,
 				CEEF6F9524D64AB50015ED13 /* SceneDelegate.swift in Sources */,
 				CEEF6FF224D64AF80015ED13 /* PhoneSensorLogger.swift in Sources */,
 				CEEF6F9724D64AB50015ED13 /* ContentView.swift in Sources */,
@@ -475,6 +482,7 @@
 			files = (
 				CEEF6FD024D64AB90015ED13 /* HostingController.swift in Sources */,
 				CEEF6FCE24D64AB90015ED13 /* ContentView.swift in Sources */,
+				CEBA6F3E24D6594A008194F8 /* PhoneConnector.swift in Sources */,
 				CEEF6FD424D64AB90015ED13 /* NotificationController.swift in Sources */,
 				CEEF6FD224D64AB90015ED13 /* ExtensionDelegate.swift in Sources */,
 				CEEF6FD624D64AB90015ED13 /* NotificationView.swift in Sources */,

@@ -12,6 +12,7 @@ import Combine
 
 class WatchSensorLogManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
+    var logger = WatchSensorLogger()
     
     @Published var accX = 0.0
     @Published var accY = 0.0
@@ -77,7 +78,16 @@ class WatchSensorLogManager: NSObject, ObservableObject {
             self.gyrZ = Double.nan
         }
         
-        print("Watch: acc (\(self.accX), \(self.accY), \(self.accZ)), gyr (\(self.gyrX), \(self.gyrY), \(self.gyrZ))")
+        // センサデータを記録する
+        let timestamp = self.logger.getTimestamp()
+        self.logger.logAccelerometerData(time: timestamp, x: self.accX, y: self.accY, z: self.accZ)
+        self.logger.logGyroscopeData(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ)
+        
+        print("Watch: \(timestamp), acc (\(self.accX), \(self.accY), \(self.accZ)), gyr (\(self.gyrX), \(self.gyrY), \(self.gyrZ))")
+        
+        // iPhoneに送信
+        self.logger.sendAccelerometerData()
+        self.logger.sendGyroscopeData()
     }
     
     func startUpdate(_ freq: Double) {
@@ -115,5 +125,83 @@ class WatchSensorLogManager: NSObject, ObservableObject {
             motionManager?.stopGyroUpdates()
         }
         
+        self.logger.sendAccelerometerData()
+        self.logger.sendGyroscopeData()
+    }
+}
+
+
+class WatchSensorLogger {
+    var accelerometerData: String
+    var gyroscopeData: String
+    
+    // 1秒毎にiPhoneに送信するデータ
+    private var accelerometerDataSec: String
+    private var gyroscopeDataSec: String
+    
+    // iPhone側にデータを送信するため
+    var connector = PhoneConnector()
+    
+    public init() {
+        let column = "time,x,y,z\n"
+        self.accelerometerData = column
+        self.gyroscopeData = column
+        self.accelerometerDataSec = ""
+        self.gyroscopeDataSec = ""
+    }
+    
+    // タイムスタンプを取得する
+    func getTimestamp() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
+        return format.string(from: Date())
+    }
+    
+    /* センサデータを保存する */
+    func logAccelerometerData(time: String, x: Double, y: Double, z: Double) {
+        var line = time + ","
+        line.append(contentsOf: String(x) + ",")
+        line.append(contentsOf: String(y) + ",")
+        line.append(contentsOf: String(z) + "\n")
+        
+        self.accelerometerData.append(contentsOf: line)
+        self.accelerometerDataSec.append(contentsOf: line)
+    }
+    
+    func logGyroscopeData(time: String, x: Double, y: Double, z: Double) {
+        var line = time + ","
+        line.append(contentsOf: String(x) + ",")
+        line.append(contentsOf: String(y) + ",")
+        line.append(contentsOf: String(z) + "\n")
+        
+        self.gyroscopeData.append(contentsOf: line)
+        self.gyroscopeDataSec.append(contentsOf: line)
+    }
+    
+    // データをリセットする
+    func resetData() {
+        let column = "time,x,y,z\n"
+        self.accelerometerData = column
+        self.gyroscopeData = column
+        
+        self.accelerometerDataSec = ""
+        self.gyroscopeDataSec = ""
+    }
+    
+    // iPhone側にcsv形式のStringを送信する
+    func sendAccelerometerData() {
+        print("Size: \(self.accelerometerDataSec.lengthOfBytes(using: String.Encoding.utf8)) byte")
+        
+        if self.connector.send(key: "ACC_DATA", value: self.accelerometerDataSec) {
+            self.accelerometerDataSec = ""
+        }
+    }
+    
+    func sendGyroscopeData() {
+        print("Size: \(self.gyroscopeDataSec.lengthOfBytes(using: String.Encoding.utf8)) byte")
+        
+        if self.connector.send(key: "GYR_DATA", value: self.gyroscopeDataSec) {
+            self.gyroscopeDataSec = ""
+        }
     }
 }

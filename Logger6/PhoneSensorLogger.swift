@@ -212,9 +212,9 @@ class SensorLogger {
         
         let apd = "\(time)_\(label)_\(subject)" // 付加する文字列(時間+ラベル+ユーザ名)
         // ファイル名を生成
-        let accelerometerFilepath = tmppath + "/accelermeter_\(apd).csv"
-        let gyroFilepath = tmppath + "/gyroscope_\(apd).csv"
-        let magnetFilepath = tmppath + "/magnetometer_\(apd).csv"
+        let accelerometerFilepath = tmppath + "/phone_accelermeter_\(apd).csv"
+        let gyroFilepath = tmppath + "/phone_gyroscope_\(apd).csv"
+        let magnetFilepath = tmppath + "/phone_magnetometer_\(apd).csv"
         
         // ファイルを書き出す
         do {
@@ -234,6 +234,14 @@ class SensorLogger {
         
         // データをリセットする
         self.resetData()
+        
+        // tmp下のファイル一覧
+        do {
+            let files = try FileManager.default.contentsOfDirectory(atPath: tmppath)
+            print(files)
+        } catch let error {
+            print(error)
+        }
         
         return urls
     }
