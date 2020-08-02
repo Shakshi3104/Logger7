@@ -109,7 +109,7 @@ class SensorLogManager: NSObject, ObservableObject {
         self.logger.logGyroscopeData(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ)
         self.logger.logMagnetometerData(time: timestamp, x: self.magX, y: self.magY, z: self.magZ)
         
-        print(timestamp + ", \(self.accX), \(self.accY), \(self.accZ)")
+        print("Phone: \(timestamp), \(self.accX), \(self.accY), \(self.accZ)")
         
     }
     
