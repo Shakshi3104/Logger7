@@ -10,7 +10,7 @@ import Foundation
 import CoreMotion
 import Combine
 
-class SensorLogManager: NSObject, ObservableObject {
+class WatchSensorLogManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
     
     @Published var accX = 0.0

@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @State private var viewChoise = 0
     
-    @ObservedObject var sensorLogger = SensorLogManager()
+    @ObservedObject var sensorLogger = PhoneSensorLogManager()
     @State private var backgroundTaskID: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 3104)
     
     var body: some View {

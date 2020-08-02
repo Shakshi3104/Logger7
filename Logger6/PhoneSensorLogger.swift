@@ -11,7 +11,7 @@ import Foundation
 import CoreMotion
 import Combine
 
-class SensorLogManager: NSObject, ObservableObject {
+class PhoneSensorLogManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
     var logger = SensorLogger()
     

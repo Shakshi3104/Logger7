@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var logStarting = false
   
-    @ObservedObject var sensorLogger = SensorLogManager()
+    @ObservedObject var sensorLogger = WatchSensorLogManager()
     
     var body: some View {
         VStack {
