@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4612AC2521D0CA0088CBC8 /* PhoneSensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */; };
 		CE77029124D696A900794923 /* IMG_4157.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028E24D696A900794923 /* IMG_4157.PNG */; };
 		CE77029224D696A900794923 /* IMG_4155.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028F24D696A900794923 /* IMG_4155.PNG */; };
 		CE77029324D696A900794923 /* IMG_4156.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029024D696A900794923 /* IMG_4156.PNG */; };
@@ -19,8 +20,6 @@
 		CEEF6F9924D64AB80015ED13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9824D64AB80015ED13 /* Assets.xcassets */; };
 		CEEF6F9C24D64AB80015ED13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9B24D64AB80015ED13 /* Preview Assets.xcassets */; };
 		CEEF6F9F24D64AB80015ED13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9D24D64AB80015ED13 /* LaunchScreen.storyboard */; };
-		CEEF6FAA24D64AB80015ED13 /* Logger6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6FA924D64AB80015ED13 /* Logger6Tests.swift */; };
-		CEEF6FB524D64AB90015ED13 /* Logger6UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6FB424D64AB90015ED13 /* Logger6UITests.swift */; };
 		CEEF6FBA24D64AB90015ED13 /* Logger6 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEEF6FC024D64AB90015ED13 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6FBE24D64AB90015ED13 /* Interface.storyboard */; };
 		CEEF6FC224D64AB90015ED13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6FC124D64AB90015ED13 /* Assets.xcassets */; };
@@ -93,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorData.swift; sourceTree = "<group>"; };
 		CE77028E24D696A900794923 /* IMG_4157.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4157.PNG; sourceTree = "<group>"; };
 		CE77028F24D696A900794923 /* IMG_4155.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4155.PNG; sourceTree = "<group>"; };
 		CE77029024D696A900794923 /* IMG_4156.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4156.PNG; sourceTree = "<group>"; };
@@ -108,11 +108,7 @@
 		CEEF6F9E24D64AB80015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEF6FA024D64AB80015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEF6FA524D64AB80015ED13 /* Logger6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEF6FA924D64AB80015ED13 /* Logger6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger6Tests.swift; sourceTree = "<group>"; };
-		CEEF6FAB24D64AB80015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEF6FB024D64AB80015ED13 /* Logger6UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger6UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEF6FB424D64AB90015ED13 /* Logger6UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger6UITests.swift; sourceTree = "<group>"; };
-		CEEF6FB624D64AB90015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logger6 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6FBF24D64AB90015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CEEF6FC124D64AB90015ED13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 				CE77028D24D6967600794923 /* materials */,
 				CEEF6FF524D64EC90015ED13 /* README.md */,
 				CEEF6F9124D64AB50015ED13 /* Logger6 */,
-				CEEF6FA824D64AB80015ED13 /* Logger6Tests */,
-				CEEF6FB324D64AB80015ED13 /* Logger6UITests */,
 				CEEF6FBD24D64AB90015ED13 /* Logger6 WatchKit App */,
 				CEEF6FCC24D64AB90015ED13 /* Logger6 WatchKit Extension */,
 				CEEF6F9024D64AB50015ED13 /* Products */,
@@ -212,6 +206,7 @@
 				CEEF6FA024D64AB80015ED13 /* Info.plist */,
 				CEEF6F9A24D64AB80015ED13 /* Preview Content */,
 				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
+				CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */,
 				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
 			);
 			path = Logger6;
@@ -223,24 +218,6 @@
 				CEEF6F9B24D64AB80015ED13 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CEEF6FA824D64AB80015ED13 /* Logger6Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CEEF6FA924D64AB80015ED13 /* Logger6Tests.swift */,
-				CEEF6FAB24D64AB80015ED13 /* Info.plist */,
-			);
-			path = Logger6Tests;
-			sourceTree = "<group>";
-		};
-		CEEF6FB324D64AB80015ED13 /* Logger6UITests */ = {
-			isa = PBXGroup;
-			children = (
-				CEEF6FB424D64AB90015ED13 /* Logger6UITests.swift */,
-				CEEF6FB624D64AB90015ED13 /* Info.plist */,
-			);
-			path = Logger6UITests;
 			sourceTree = "<group>";
 		};
 		CEEF6FBD24D64AB90015ED13 /* Logger6 WatchKit App */ = {
@@ -480,6 +457,7 @@
 				CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */,
 				CEEF6F9524D64AB50015ED13 /* SceneDelegate.swift in Sources */,
 				CEEF6FF224D64AF80015ED13 /* PhoneSensorLogger.swift in Sources */,
+				CE4612AC2521D0CA0088CBC8 /* PhoneSensorData.swift in Sources */,
 				CEEF6F9724D64AB50015ED13 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +466,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEF6FAA24D64AB80015ED13 /* Logger6Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +473,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEF6FB524D64AB90015ED13 /* Logger6UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +744,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Logger6/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -788,6 +765,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Logger6/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
