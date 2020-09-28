@@ -8,16 +8,6 @@
 
 import Foundation
 
-// センサーの種類
-enum SensorType {
-    case phoneAccelerometer
-    case phoneGyroscope
-    case phoneMagnetometer
-    case watchAccelerometer
-    case watchGyroscope
-    case headphoneAccelerometer
-    case headphoneGyroscope
-}
 
 // CSVファイル用のデータ保持
 struct SensorData {

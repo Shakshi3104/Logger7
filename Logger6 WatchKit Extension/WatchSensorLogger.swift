@@ -10,9 +10,17 @@ import Foundation
 import CoreMotion
 import Combine
 
+
+func getTimestamp() -> String {
+    let format = DateFormatter()
+    format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
+    return format.string(from: Date())
+}
+
 class WatchSensorLogManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
     var logger = WatchSensorLogger()
+    var data = SensorData()
     
     @Published var accX = 0.0
     @Published var accY = 0.0
@@ -79,15 +87,17 @@ class WatchSensorLogManager: NSObject, ObservableObject {
         }
         
         // センサデータを記録する
-        let timestamp = self.logger.getTimestamp()
-        self.logger.logAccelerometerData(time: timestamp, x: self.accX, y: self.accY, z: self.accZ)
-        self.logger.logGyroscopeData(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ)
+        let timestamp = getTimestamp()
+        self.data.append(time: timestamp, x: self.accX, y: self.accY, z: self.accZ, sensorType: .watchAccelerometer)
+        self.data.append(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ, sensorType: .watchGyroscope)
         
         print("Watch: \(timestamp), acc (\(self.accX), \(self.accY), \(self.accZ)), gyr (\(self.gyrX), \(self.gyrY), \(self.gyrZ))")
         
         // iPhoneに送信
-        self.logger.sendAccelerometerData()
-        self.logger.sendGyroscopeData()
+//        self.logger.sendAccelerometerData()
+//        self.logger.sendGyroscopeData()
+        self.data.sendAccelerometerData()
+        self.data.sendGyroscopeData()
     }
     
     func startUpdate(_ freq: Double) {

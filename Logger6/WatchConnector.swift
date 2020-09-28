@@ -14,6 +14,14 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
     
     let saver = WatchSensorData()
     
+    // Sensor values from Apple Watch
+    @Published var accX = 0.0
+    @Published var accY = 0.0
+    @Published var accZ = 0.0
+    @Published var gyrX = 0.0
+    @Published var gyrY = 0.0
+    @Published var gyrZ = 0.0
+    
     override init() {
         super.init()
         if WCSession.isSupported() {
@@ -40,12 +48,44 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
         DispatchQueue.main.async {
             if let accData = message["ACC_DATA"] as? String {
                 self.saver.logAccelerometerData(line: accData)
+                
+                if accData.count != 0 {
+                    // iPhone上で表示する
+                    let accDataDouble = self.stringToDouble(data: accData)
+                    self.accX = accDataDouble[0]
+                    self.accY = accDataDouble[1]
+                    self.accZ = accDataDouble[2]
+                }
             }
             
             if let gyrData = message["GYR_DATA"] as? String {
                 self.saver.logGyroscopeData(line: gyrData)
+                
+                if gyrData.count != 0 {
+                    let gyrDataDouble = self.stringToDouble(data: gyrData)
+                    self.gyrX = gyrDataDouble[0]
+                    self.gyrY = gyrDataDouble[1]
+                    self.gyrZ = gyrDataDouble[2]
+                }
             }
         }
+    }
+    
+    // Apple Watchから送られてくるStringをDoubleのxyzに分解する
+    private func stringToDouble(data: String) -> [Double] {
+        // 改行コードを置き換える
+        let dataNoLF = data.replacingOccurrences(of: "\n", with: "")
+        // カンマ区切り
+        let array = dataNoLF.components(separatedBy: ",")
+        
+        // String to Double
+        let x = Double(array[1])!
+        let y = Double(array[2])!
+        let z = Double(array[3])!
+        
+        let dataDouble = [x, y, z]
+        
+        return dataDouble
     }
     
     
