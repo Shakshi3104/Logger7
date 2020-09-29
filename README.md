@@ -13,7 +13,7 @@ Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://git
 
 ## Version
 
-6.2.0
+7.0.0
 
 ## Requirements
 - iOS 14.0+
@@ -27,5 +27,5 @@ Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://git
 |:----:|:-------------:|:---------|
 |6.0.0|2020/8/2| Connect [Logger5](https://github.com/Shakshi3104/Logger5) and [Logger-Watch](https://github.com/Shakshi3104/Logger-Watch) simply|
 |6.1.0|2020/8/2| Implement the function to transfer data from Apple Watch to iPhone and save to CSV file|
-|6.2.0|2020/9/28| Added the function to record the motion of the AirPods Pro implemented in [Logger5](https://github.com/Shakshi3104/Logger5) |
+|7.0.0|2020/9/28| Added the function to record the motion of the AirPods Pro implemented in [Logger5](https://github.com/Shakshi3104/Logger5) |
 
