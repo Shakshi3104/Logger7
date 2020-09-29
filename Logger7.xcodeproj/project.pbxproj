@@ -27,10 +27,10 @@
 		CEEF6F9924D64AB80015ED13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9824D64AB80015ED13 /* Assets.xcassets */; };
 		CEEF6F9C24D64AB80015ED13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9B24D64AB80015ED13 /* Preview Assets.xcassets */; };
 		CEEF6F9F24D64AB80015ED13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6F9D24D64AB80015ED13 /* LaunchScreen.storyboard */; };
-		CEEF6FBA24D64AB90015ED13 /* Logger6 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEEF6FBA24D64AB90015ED13 /* Logger7 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEEF6FC024D64AB90015ED13 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6FBE24D64AB90015ED13 /* Interface.storyboard */; };
 		CEEF6FC224D64AB90015ED13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF6FC124D64AB90015ED13 /* Assets.xcassets */; };
-		CEEF6FC924D64AB90015ED13 /* Logger6 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEEF6FC824D64AB90015ED13 /* Logger6 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEEF6FC924D64AB90015ED13 /* Logger7 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEEF6FC824D64AB90015ED13 /* Logger7 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEEF6FCE24D64AB90015ED13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6FCD24D64AB90015ED13 /* ContentView.swift */; };
 		CEEF6FD024D64AB90015ED13 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6FCF24D64AB90015ED13 /* HostingController.swift */; };
 		CEEF6FD224D64AB90015ED13 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6FD124D64AB90015ED13 /* ExtensionDelegate.swift */; };
@@ -80,7 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CEEF6FC924D64AB90015ED13 /* Logger6 WatchKit Extension.appex in Embed App Extensions */,
+				CEEF6FC924D64AB90015ED13 /* Logger7 WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,7 +91,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CEEF6FBA24D64AB90015ED13 /* Logger6 WatchKit App.app in Embed Watch Content */,
+				CEEF6FBA24D64AB90015ED13 /* Logger7 WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,13 +118,13 @@
 		CEEF6F9B24D64AB80015ED13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEEF6F9E24D64AB80015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEF6FA024D64AB80015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEEF6FA524D64AB80015ED13 /* Logger6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEF6FB024D64AB80015ED13 /* Logger6UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger6UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logger6 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger7UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logger7 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6FBF24D64AB90015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CEEF6FC124D64AB90015ED13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEF6FC324D64AB90015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEEF6FC824D64AB90015ED13 /* Logger6 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Logger6 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEF6FC824D64AB90015ED13 /* Logger7 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Logger7 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6FCD24D64AB90015ED13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEEF6FCF24D64AB90015ED13 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		CEEF6FD124D64AB90015ED13 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -200,10 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				CEEF6F8F24D64AB50015ED13 /* Logger.app */,
-				CEEF6FA524D64AB80015ED13 /* Logger6Tests.xctest */,
-				CEEF6FB024D64AB80015ED13 /* Logger6UITests.xctest */,
-				CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */,
-				CEEF6FC824D64AB90015ED13 /* Logger6 WatchKit Extension.appex */,
+				CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */,
+				CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */,
+				CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */,
+				CEEF6FC824D64AB90015ED13 /* Logger7 WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEEF6F8E24D64AB50015ED13 /* Logger6 */ = {
+		CEEF6F8E24D64AB50015ED13 /* Logger7 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FE824D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6" */;
+			buildConfigurationList = CEEF6FE824D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7" */;
 			buildPhases = (
 				CEEF6F8B24D64AB50015ED13 /* Sources */,
 				CEEF6F8C24D64AB50015ED13 /* Frameworks */,
@@ -288,14 +288,14 @@
 			dependencies = (
 				CEEF6FBC24D64AB90015ED13 /* PBXTargetDependency */,
 			);
-			name = Logger6;
+			name = Logger7;
 			productName = Logger6;
 			productReference = CEEF6F8F24D64AB50015ED13 /* Logger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEEF6FA424D64AB80015ED13 /* Logger6Tests */ = {
+		CEEF6FA424D64AB80015ED13 /* Logger7Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6Tests" */;
+			buildConfigurationList = CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7Tests" */;
 			buildPhases = (
 				CEEF6FA124D64AB80015ED13 /* Sources */,
 				CEEF6FA224D64AB80015ED13 /* Frameworks */,
@@ -306,14 +306,14 @@
 			dependencies = (
 				CEEF6FA724D64AB80015ED13 /* PBXTargetDependency */,
 			);
-			name = Logger6Tests;
+			name = Logger7Tests;
 			productName = Logger6Tests;
-			productReference = CEEF6FA524D64AB80015ED13 /* Logger6Tests.xctest */;
+			productReference = CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEEF6FAF24D64AB80015ED13 /* Logger6UITests */ = {
+		CEEF6FAF24D64AB80015ED13 /* Logger7UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6UITests" */;
+			buildConfigurationList = CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7UITests" */;
 			buildPhases = (
 				CEEF6FAC24D64AB80015ED13 /* Sources */,
 				CEEF6FAD24D64AB80015ED13 /* Frameworks */,
@@ -324,14 +324,14 @@
 			dependencies = (
 				CEEF6FB224D64AB80015ED13 /* PBXTargetDependency */,
 			);
-			name = Logger6UITests;
+			name = Logger7UITests;
 			productName = Logger6UITests;
-			productReference = CEEF6FB024D64AB80015ED13 /* Logger6UITests.xctest */;
+			productReference = CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		CEEF6FB824D64AB90015ED13 /* Logger6 WatchKit App */ = {
+		CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FE424D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6 WatchKit App" */;
+			buildConfigurationList = CEEF6FE424D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7 WatchKit App" */;
 			buildPhases = (
 				CEEF6FB724D64AB90015ED13 /* Resources */,
 				CEEF6FE324D64ABA0015ED13 /* Embed App Extensions */,
@@ -341,14 +341,14 @@
 			dependencies = (
 				CEEF6FCB24D64AB90015ED13 /* PBXTargetDependency */,
 			);
-			name = "Logger6 WatchKit App";
+			name = "Logger7 WatchKit App";
 			productName = "Logger6 WatchKit App";
-			productReference = CEEF6FB924D64AB90015ED13 /* Logger6 WatchKit App.app */;
+			productReference = CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		CEEF6FC724D64AB90015ED13 /* Logger6 WatchKit Extension */ = {
+		CEEF6FC724D64AB90015ED13 /* Logger7 WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FE024D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6 WatchKit Extension" */;
+			buildConfigurationList = CEEF6FE024D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7 WatchKit Extension" */;
 			buildPhases = (
 				CEEF6FC424D64AB90015ED13 /* Sources */,
 				CEEF6FC524D64AB90015ED13 /* Frameworks */,
@@ -358,9 +358,9 @@
 			);
 			dependencies = (
 			);
-			name = "Logger6 WatchKit Extension";
+			name = "Logger7 WatchKit Extension";
 			productName = "Logger6 WatchKit Extension";
-			productReference = CEEF6FC824D64AB90015ED13 /* Logger6 WatchKit Extension.appex */;
+			productReference = CEEF6FC824D64AB90015ED13 /* Logger7 WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +392,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEEF6F8A24D64AB50015ED13 /* Build configuration list for PBXProject "Logger6" */;
+			buildConfigurationList = CEEF6F8A24D64AB50015ED13 /* Build configuration list for PBXProject "Logger7" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -405,11 +405,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEEF6F8E24D64AB50015ED13 /* Logger6 */,
-				CEEF6FA424D64AB80015ED13 /* Logger6Tests */,
-				CEEF6FAF24D64AB80015ED13 /* Logger6UITests */,
-				CEEF6FB824D64AB90015ED13 /* Logger6 WatchKit App */,
-				CEEF6FC724D64AB90015ED13 /* Logger6 WatchKit Extension */,
+				CEEF6F8E24D64AB50015ED13 /* Logger7 */,
+				CEEF6FA424D64AB80015ED13 /* Logger7Tests */,
+				CEEF6FAF24D64AB80015ED13 /* Logger7UITests */,
+				CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */,
+				CEEF6FC724D64AB90015ED13 /* Logger7 WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -517,22 +517,22 @@
 /* Begin PBXTargetDependency section */
 		CEEF6FA724D64AB80015ED13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEEF6F8E24D64AB50015ED13 /* Logger6 */;
+			target = CEEF6F8E24D64AB50015ED13 /* Logger7 */;
 			targetProxy = CEEF6FA624D64AB80015ED13 /* PBXContainerItemProxy */;
 		};
 		CEEF6FB224D64AB80015ED13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEEF6F8E24D64AB50015ED13 /* Logger6 */;
+			target = CEEF6F8E24D64AB50015ED13 /* Logger7 */;
 			targetProxy = CEEF6FB124D64AB80015ED13 /* PBXContainerItemProxy */;
 		};
 		CEEF6FBC24D64AB90015ED13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEEF6FB824D64AB90015ED13 /* Logger6 WatchKit App */;
+			target = CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */;
 			targetProxy = CEEF6FBB24D64AB90015ED13 /* PBXContainerItemProxy */;
 		};
 		CEEF6FCB24D64AB90015ED13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEEF6FC724D64AB90015ED13 /* Logger6 WatchKit Extension */;
+			target = CEEF6FC724D64AB90015ED13 /* Logger7 WatchKit Extension */;
 			targetProxy = CEEF6FCA24D64AB90015ED13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -773,7 +773,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -794,7 +794,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -819,7 +819,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger6.app/Logger6";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger7.app/Logger7";
 			};
 			name = Debug;
 		};
@@ -841,7 +841,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger6.app/Logger6";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger7.app/Logger7";
 			};
 			name = Release;
 		};
@@ -888,7 +888,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEEF6F8A24D64AB50015ED13 /* Build configuration list for PBXProject "Logger6" */ = {
+		CEEF6F8A24D64AB50015ED13 /* Build configuration list for PBXProject "Logger7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FDE24D64ABA0015ED13 /* Debug */,
@@ -897,7 +897,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEF6FE024D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6 WatchKit Extension" */ = {
+		CEEF6FE024D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7 WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FE124D64ABA0015ED13 /* Debug */,
@@ -906,7 +906,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEF6FE424D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6 WatchKit App" */ = {
+		CEEF6FE424D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7 WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FE524D64ABA0015ED13 /* Debug */,
@@ -915,7 +915,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEF6FE824D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6" */ = {
+		CEEF6FE824D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FE924D64ABA0015ED13 /* Debug */,
@@ -924,7 +924,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6Tests" */ = {
+		CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FEC24D64ABA0015ED13 /* Debug */,
@@ -933,7 +933,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger6UITests" */ = {
+		CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEF6FEF24D64ABA0015ED13 /* Debug */,
