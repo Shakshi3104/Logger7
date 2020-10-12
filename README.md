@@ -33,7 +33,7 @@ Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://git
 ## Logger Series
 - [Logger-storyboard](https://github.com/Shakshi3104/LoggerGit) : Logger implemented using Storyboard, available on iOS 10+.
 - [Logger-SwiftUI](https://github.com/Shakshi3104/Logger5) : Logger implemented using SwiftUI, available on iOS 13+.
-- [Logger-Watch](https://github.com/Shakshi3104/Logger-Watch) : Logger for Apple Watch, implemented using SwiftUI, available on watchOS 6.0+.
+- [Logger-for-watch](https://github.com/Shakshi3104/Logger-Watch) : Logger for Apple Watch, implemented using SwiftUI, available on watchOS 6.0+.
 - [Logger-with-watch](https://github.com/Shakshi3104/Logger6) : Logger for iPhone and Apple Watch, implemented using SwiftUI, available on iOS 13.0+ and watchOS 6.0+.
 - [Logger-with-AirPods Pro](https://github.com/Shakshi3104/Logger5/tree/headphone) : Logger for iPhone and AirPods Pro, implemented using SwiftUI, available on iOS 14.0+.
 - [Logger-all-device](https://github.com/Shakshi3104/Logger7) : Logger for iPhone, Apple Watch, and AirPods Pro, implemented using SwiftUI, available on iOS 14.0+ and watchOS 7.0+.
