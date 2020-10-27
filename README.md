@@ -13,7 +13,7 @@ Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://git
 
 ## Version
 
-7.0.0
+7.1.0
 
 ## Requirements
 - iOS 14.0+
