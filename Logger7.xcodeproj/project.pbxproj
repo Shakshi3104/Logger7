@@ -15,6 +15,7 @@
 		CE4612ED2521E21B0088CBC8 /* IMG_4301.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */; };
 		CE4612F42521E2810088CBC8 /* IMG_4302.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612F32521E2810088CBC8 /* IMG_4302.PNG */; };
 		CE4612F52521E2810088CBC8 /* IMG_4302.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612F32521E2810088CBC8 /* IMG_4302.PNG */; };
+		CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE63A0BA2547A4B900B65CEA /* Settings.bundle */; };
 		CE77029124D696A900794923 /* IMG_4157.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028E24D696A900794923 /* IMG_4157.PNG */; };
 		CE77029224D696A900794923 /* IMG_4155.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028F24D696A900794923 /* IMG_4155.PNG */; };
 		CE77029324D696A900794923 /* IMG_4156.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029024D696A900794923 /* IMG_4156.PNG */; };
@@ -43,20 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CEEF6FA624D64AB80015ED13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEEF6F8724D64AB50015ED13 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEEF6F8E24D64AB50015ED13;
-			remoteInfo = Logger6;
-		};
-		CEEF6FB124D64AB80015ED13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEEF6F8724D64AB50015ED13 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEEF6F8E24D64AB50015ED13;
-			remoteInfo = Logger6;
-		};
 		CEEF6FBB24D64AB90015ED13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEEF6F8724D64AB50015ED13 /* Project object */;
@@ -104,6 +91,7 @@
 		CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSensorData.swift; sourceTree = "<group>"; };
 		CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4301.PNG; sourceTree = "<group>"; };
 		CE4612F32521E2810088CBC8 /* IMG_4302.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4302.PNG; sourceTree = "<group>"; };
+		CE63A0BA2547A4B900B65CEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CE77028E24D696A900794923 /* IMG_4157.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4157.PNG; sourceTree = "<group>"; };
 		CE77028F24D696A900794923 /* IMG_4155.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4155.PNG; sourceTree = "<group>"; };
 		CE77029024D696A900794923 /* IMG_4156.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4156.PNG; sourceTree = "<group>"; };
@@ -118,8 +106,6 @@
 		CEEF6F9B24D64AB80015ED13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEEF6F9E24D64AB80015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEF6FA024D64AB80015ED13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Logger7UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logger7 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF6FBF24D64AB90015ED13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CEEF6FC124D64AB90015ED13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,20 +127,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		CEEF6F8C24D64AB50015ED13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF6FA224D64AB80015ED13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF6FAD24D64AB80015ED13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				CEEF6F8F24D64AB50015ED13 /* Logger.app */,
-				CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */,
-				CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */,
 				CEEF6FB924D64AB90015ED13 /* Logger7 WatchKit App.app */,
 				CEEF6FC824D64AB90015ED13 /* Logger7 WatchKit Extension.appex */,
 			);
@@ -211,6 +181,7 @@
 		CEEF6F9124D64AB50015ED13 /* Logger7 */ = {
 			isa = PBXGroup;
 			children = (
+				CE63A0BA2547A4B900B65CEA /* Settings.bundle */,
 				CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */,
 				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
 				CEEF6F9624D64AB50015ED13 /* ContentView.swift */,
@@ -293,42 +264,6 @@
 			productReference = CEEF6F8F24D64AB50015ED13 /* Logger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEEF6FA424D64AB80015ED13 /* Logger7Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7Tests" */;
-			buildPhases = (
-				CEEF6FA124D64AB80015ED13 /* Sources */,
-				CEEF6FA224D64AB80015ED13 /* Frameworks */,
-				CEEF6FA324D64AB80015ED13 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEEF6FA724D64AB80015ED13 /* PBXTargetDependency */,
-			);
-			name = Logger7Tests;
-			productName = Logger6Tests;
-			productReference = CEEF6FA524D64AB80015ED13 /* Logger7Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CEEF6FAF24D64AB80015ED13 /* Logger7UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7UITests" */;
-			buildPhases = (
-				CEEF6FAC24D64AB80015ED13 /* Sources */,
-				CEEF6FAD24D64AB80015ED13 /* Frameworks */,
-				CEEF6FAE24D64AB80015ED13 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEEF6FB224D64AB80015ED13 /* PBXTargetDependency */,
-			);
-			name = Logger7UITests;
-			productName = Logger6UITests;
-			productReference = CEEF6FB024D64AB80015ED13 /* Logger7UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEEF6FE424D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7 WatchKit App" */;
@@ -376,14 +311,6 @@
 					CEEF6F8E24D64AB50015ED13 = {
 						CreatedOnToolsVersion = 11.6;
 					};
-					CEEF6FA424D64AB80015ED13 = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = CEEF6F8E24D64AB50015ED13;
-					};
-					CEEF6FAF24D64AB80015ED13 = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = CEEF6F8E24D64AB50015ED13;
-					};
 					CEEF6FB824D64AB90015ED13 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -406,8 +333,6 @@
 			projectRoot = "";
 			targets = (
 				CEEF6F8E24D64AB50015ED13 /* Logger7 */,
-				CEEF6FA424D64AB80015ED13 /* Logger7Tests */,
-				CEEF6FAF24D64AB80015ED13 /* Logger7UITests */,
 				CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */,
 				CEEF6FC724D64AB90015ED13 /* Logger7 WatchKit Extension */,
 			);
@@ -421,6 +346,7 @@
 			files = (
 				CE77029124D696A900794923 /* IMG_4157.PNG in Resources */,
 				CEEF6F9F24D64AB80015ED13 /* LaunchScreen.storyboard in Resources */,
+				CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */,
 				CE77029224D696A900794923 /* IMG_4155.PNG in Resources */,
 				CE4612F42521E2810088CBC8 /* IMG_4302.PNG in Resources */,
 				CE4612EC2521E21B0088CBC8 /* IMG_4301.PNG in Resources */,
@@ -428,20 +354,6 @@
 				CE77029324D696A900794923 /* IMG_4156.PNG in Resources */,
 				CEEF6F9C24D64AB80015ED13 /* Preview Assets.xcassets in Resources */,
 				CEEF6F9924D64AB80015ED13 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF6FA324D64AB80015ED13 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF6FAE24D64AB80015ED13 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,20 +394,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEEF6FA124D64AB80015ED13 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF6FAC24D64AB80015ED13 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEEF6FC424D64AB90015ED13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,16 +413,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEEF6FA724D64AB80015ED13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEEF6F8E24D64AB50015ED13 /* Logger7 */;
-			targetProxy = CEEF6FA624D64AB80015ED13 /* PBXContainerItemProxy */;
-		};
-		CEEF6FB224D64AB80015ED13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEEF6F8E24D64AB50015ED13 /* Logger7 */;
-			targetProxy = CEEF6FB124D64AB80015ED13 /* PBXContainerItemProxy */;
-		};
 		CEEF6FBC24D64AB90015ED13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CEEF6FB824D64AB90015ED13 /* Logger7 WatchKit App */;
@@ -608,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -663,7 +551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -678,22 +566,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Logger6 WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Logger7 WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Logger6 WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -702,22 +590,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Logger6 WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Logger7 WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Logger6 WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -728,15 +616,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				IBSC_MODULE = Logger6_WatchKit_Extension;
-				INFOPLIST_FILE = "Logger6 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6.watchkitapp;
+				IBSC_MODULE = Logger7_WatchKit_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -747,15 +635,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				IBSC_MODULE = Logger6_WatchKit_Extension;
-				INFOPLIST_FILE = "Logger6 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6.watchkitapp;
+				IBSC_MODULE = Logger7_WatchKit_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -764,10 +652,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Logger6/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Logger7/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Logger6/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,10 +673,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Logger6/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Logger7/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Logger6/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Logger7/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -798,90 +686,6 @@
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CEEF6FEC24D64ABA0015ED13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				INFOPLIST_FILE = Logger6Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger7.app/Logger7";
-			};
-			name = Debug;
-		};
-		CEEF6FED24D64ABA0015ED13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				INFOPLIST_FILE = Logger6Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logger7.app/Logger7";
-			};
-			name = Release;
-		};
-		CEEF6FEF24D64ABA0015ED13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				INFOPLIST_FILE = Logger6UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Logger6;
-			};
-			name = Debug;
-		};
-		CEEF6FF024D64ABA0015ED13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
-				INFOPLIST_FILE = Logger6UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger6UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Logger6;
 			};
 			name = Release;
 		};
@@ -920,24 +724,6 @@
 			buildConfigurations = (
 				CEEF6FE924D64ABA0015ED13 /* Debug */,
 				CEEF6FEA24D64ABA0015ED13 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEEF6FEB24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEEF6FEC24D64ABA0015ED13 /* Debug */,
-				CEEF6FED24D64ABA0015ED13 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEEF6FEE24D64ABA0015ED13 /* Build configuration list for PBXNativeTarget "Logger7UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEEF6FEF24D64ABA0015ED13 /* Debug */,
-				CEEF6FF024D64ABA0015ED13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

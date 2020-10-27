@@ -19,7 +19,17 @@ struct ContentView: View {
                 self.logStarting.toggle()
                 
                 if self.logStarting {
-                    self.sensorLogger.startUpdate(50.0)
+                    // 計測スタート
+                    var samplingFrequency = UserDefaults.standard.integer(forKey: "frequency_preference")
+                    
+                    print("sampling frequency = \(samplingFrequency) on watch")
+                    
+                    // なぜかサンプリング周波数が0のときは100にしておく
+                    if samplingFrequency == 0 {
+                        samplingFrequency = 100
+                    }
+                    
+                    self.sensorLogger.startUpdate(Double(samplingFrequency))
                 }
                 else {
                     self.sensorLogger.stopUpdate()

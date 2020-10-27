@@ -73,7 +73,16 @@ struct ContentView: View {
                         UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
                         
                         // 計測スタート
-                        self.sensorLogger.startUpdate(50.0)
+                        var samplingFrequency = UserDefaults.standard.integer(forKey: "frequency_preference")
+                                                
+                        print("sampling frequency = \(samplingFrequency)")
+                        
+                        // なぜかサンプリング周波数が0のときは100にしておく
+                        if samplingFrequency == 0 {
+                            samplingFrequency = 100
+                        }
+                        
+                        self.sensorLogger.startUpdate(Double(samplingFrequency))
                     }
                     else {
                         self.sensorLogger.stopUpdate()
