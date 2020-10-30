@@ -10,15 +10,8 @@
 		CE4612B82521D4850088CBC8 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612B72521D4850088CBC8 /* SensorType.swift */; };
 		CE4612B92521D4850088CBC8 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612B72521D4850088CBC8 /* SensorType.swift */; };
 		CE4612C12521D4F70088CBC8 /* WatchSensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */; };
-		CE4612EC2521E21B0088CBC8 /* IMG_4301.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */; };
-		CE4612ED2521E21B0088CBC8 /* IMG_4301.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */; };
-		CE4612F42521E2810088CBC8 /* IMG_4302.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612F32521E2810088CBC8 /* IMG_4302.PNG */; };
-		CE4612F52521E2810088CBC8 /* IMG_4302.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE4612F32521E2810088CBC8 /* IMG_4302.PNG */; };
 		CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE63A0BA2547A4B900B65CEA /* Settings.bundle */; };
 		CE77029124D696A900794923 /* IMG_4157.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028E24D696A900794923 /* IMG_4157.PNG */; };
-		CE77029224D696A900794923 /* IMG_4155.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028F24D696A900794923 /* IMG_4155.PNG */; };
-		CE77029324D696A900794923 /* IMG_4156.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029024D696A900794923 /* IMG_4156.PNG */; };
-		CE77029524D697D600794923 /* IMG_4158.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029424D697D600794923 /* IMG_4158.PNG */; };
 		CEB8DE91254BFF10009DEB1F /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8E254BFF10009DEB1F /* SensorData.swift */; };
 		CEB8DE92254BFF10009DEB1F /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8F254BFF10009DEB1F /* MetaData.swift */; };
 		CEB8DE93254BFF10009DEB1F /* TimestampUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */; };
@@ -95,13 +88,8 @@
 /* Begin PBXFileReference section */
 		CE4612B72521D4850088CBC8 /* SensorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorType.swift; sourceTree = "<group>"; };
 		CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSensorData.swift; sourceTree = "<group>"; };
-		CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4301.PNG; sourceTree = "<group>"; };
-		CE4612F32521E2810088CBC8 /* IMG_4302.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4302.PNG; sourceTree = "<group>"; };
 		CE63A0BA2547A4B900B65CEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CE77028E24D696A900794923 /* IMG_4157.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4157.PNG; sourceTree = "<group>"; };
-		CE77028F24D696A900794923 /* IMG_4155.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4155.PNG; sourceTree = "<group>"; };
-		CE77029024D696A900794923 /* IMG_4156.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4156.PNG; sourceTree = "<group>"; };
-		CE77029424D697D600794923 /* IMG_4158.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4158.PNG; sourceTree = "<group>"; };
 		CEB8DE8E254BFF10009DEB1F /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		CEB8DE8F254BFF10009DEB1F /* MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
 		CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampUtils.swift; sourceTree = "<group>"; };
@@ -163,11 +151,6 @@
 				CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */,
 				CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */,
 				CEB8DE9E254C06B5009DEB1F /* IMG_1729.png */,
-				CE4612F32521E2810088CBC8 /* IMG_4302.PNG */,
-				CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */,
-				CE77029424D697D600794923 /* IMG_4158.PNG */,
-				CE77028F24D696A900794923 /* IMG_4155.PNG */,
-				CE77029024D696A900794923 /* IMG_4156.PNG */,
 				CE77028E24D696A900794923 /* IMG_4157.PNG */,
 			);
 			path = materials;
@@ -369,12 +352,7 @@
 				CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */,
 				CEB8DEA7254C072F009DEB1F /* IMG_4338.PNG in Resources */,
 				CEB8DEA0254C06B5009DEB1F /* IMG_1729.png in Resources */,
-				CE77029224D696A900794923 /* IMG_4155.PNG in Resources */,
-				CE4612F42521E2810088CBC8 /* IMG_4302.PNG in Resources */,
-				CE4612EC2521E21B0088CBC8 /* IMG_4301.PNG in Resources */,
-				CE77029524D697D600794923 /* IMG_4158.PNG in Resources */,
 				CEB8DEA1254C06B5009DEB1F /* IMG_1727.png in Resources */,
-				CE77029324D696A900794923 /* IMG_4156.PNG in Resources */,
 				CEEF6F9C24D64AB80015ED13 /* Preview Assets.xcassets in Resources */,
 				CEEF6F9924D64AB80015ED13 /* Assets.xcassets in Resources */,
 			);
@@ -393,8 +371,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4612F52521E2810088CBC8 /* IMG_4302.PNG in Resources */,
-				CE4612ED2521E21B0088CBC8 /* IMG_4301.PNG in Resources */,
 				CEEF6FDB24D64ABA0015ED13 /* Preview Assets.xcassets in Resources */,
 				CEEF6FD824D64ABA0015ED13 /* Assets.xcassets in Resources */,
 			);
@@ -601,7 +577,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -626,7 +602,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -646,7 +622,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -666,7 +642,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -691,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
@@ -713,7 +689,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
