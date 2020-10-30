@@ -1,22 +1,14 @@
 //
 //  PhoneSensorLogger.swift
-//  Logger6
+//  LoggerWatchPods
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
-
 
 import Foundation
 import CoreMotion
 import Combine
 
-
-func getTimestamp() -> String {
-    let format = DateFormatter()
-    format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-    return format.string(from: Date())
-}
 
 @available(iOS 14.0, *)
 class PhoneSensorManager: NSObject, ObservableObject {
@@ -35,13 +27,6 @@ class PhoneSensorManager: NSObject, ObservableObject {
     @Published var magY = 0.0
     @Published var magZ = 0.0
     
-    @Published var accXArray = [0.0]
-    @Published var accYArray = [0.0]
-    @Published var accZArray = [0.0]
-    @Published var gyrXArray = [0.0]
-    @Published var gyrYArray = [0.0]
-    @Published var gyrZArray = [0.0]
-    
     // Headphone
     @Published var headAccX = 0.0
     @Published var headAccY = 0.0
@@ -59,7 +44,6 @@ class PhoneSensorManager: NSObject, ObservableObject {
     }
     
     @objc private func startLogSensor() {
-        let suffixLength = 64
         
         if let data = motionManager?.accelerometerData {
             let x = data.acceleration.x
@@ -69,14 +53,6 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.accX = x
             self.accY = y
             self.accZ = z
-            
-            // グラフ表示用
-            self.accXArray.append(x)
-            self.accXArray = self.accXArray.suffix(suffixLength)
-            self.accYArray.append(y)
-            self.accYArray = self.accYArray.suffix(suffixLength)
-            self.accZArray.append(z)
-            self.accZArray = self.accZArray.suffix(suffixLength)
         }
         else {
             self.accX = Double.nan
@@ -93,13 +69,6 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.gyrY = y
             self.gyrZ = z
             
-            // グラフ表示用
-            self.gyrXArray.append(x)
-            self.gyrXArray = self.gyrXArray.suffix(suffixLength)
-            self.gyrYArray.append(y)
-            self.gyrYArray = self.gyrYArray.suffix(suffixLength)
-            self.gyrZArray.append(z)
-            self.gyrZArray = self.gyrZArray.suffix(suffixLength)
         }
         else {
             self.gyrX = Double.nan

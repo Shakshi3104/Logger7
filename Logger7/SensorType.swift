@@ -1,13 +1,11 @@
 //
 //  SensorType.swift
-//  Logger6
+//  LoggerWatchPods
 //
-//  Created by Satoshi on 2020/09/28.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import Foundation
-
 
 // センサーの種類
 enum SensorType {

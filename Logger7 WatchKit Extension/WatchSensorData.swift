@@ -1,9 +1,8 @@
 //
 //  WatchSensorData.swift
-//  Logger6
+//  LoggerWatchPods WatchKit Extension
 //
-//  Created by Satoshi on 2020/09/28.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import Foundation

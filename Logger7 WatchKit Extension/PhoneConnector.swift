@@ -1,9 +1,8 @@
 //
 //  PhoneConnector.swift
-//  Logger6 WatchKit Extension
+//  LoggerWatchPods WatchKit Extension
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import Foundation

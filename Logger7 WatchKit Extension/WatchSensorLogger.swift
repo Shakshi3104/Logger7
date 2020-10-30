@@ -1,9 +1,8 @@
 //
 //  WatchSensorLogger.swift
-//  Logger6 WatchKit Extension
+//  LoggerWatchPods WatchKit Extension
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import Foundation
@@ -11,13 +10,7 @@ import CoreMotion
 import Combine
 
 
-func getTimestamp() -> String {
-    let format = DateFormatter()
-    format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-    return format.string(from: Date())
-}
-
-class WatchSensorLogManager: NSObject, ObservableObject {
+class WatchSensorManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
     var logger = WatchSensorLogger()
     var data = SensorData()
@@ -55,21 +48,6 @@ class WatchSensorLogManager: NSObject, ObservableObject {
             self.accZ = Double.nan
         }
         
-//        if let data = motionManager?.gyroData {
-//            let x = data.rotationRate.x
-//            let y = data.rotationRate.y
-//            let z = data.rotationRate.z
-//
-//            self.gyrX = x
-//            self.gyrY = y
-//            self.gyrZ = z
-//        }
-//        else {
-//            self.gyrX = Double.nan
-//            self.gyrY = Double.nan
-//            self.gyrZ = Double.nan
-//        }
-        
         if let data = motionManager?.deviceMotion {
             let x = data.rotationRate.x
             let y = data.rotationRate.y
@@ -93,9 +71,6 @@ class WatchSensorLogManager: NSObject, ObservableObject {
         
         print("Watch: \(timestamp), acc (\(self.accX), \(self.accY), \(self.accZ)), gyr (\(self.gyrX), \(self.gyrY), \(self.gyrZ))")
         
-        // iPhoneに送信
-//        self.logger.sendAccelerometerData()
-//        self.logger.sendGyroscopeData()
         self.data.sendAccelerometerData()
         self.data.sendGyroscopeData()
     }
@@ -104,10 +79,6 @@ class WatchSensorLogManager: NSObject, ObservableObject {
         if motionManager!.isAccelerometerAvailable {
             motionManager?.startAccelerometerUpdates()
         }
-        
-//        if motionManager!.isGyroAvailable {
-//            motionManager?.startGyroUpdates()
-//        }
         
         // Gyroscopeの生データの代わりにDeviceMotionのrotationRateを取得する
         if motionManager!.isDeviceMotionAvailable {
@@ -135,12 +106,13 @@ class WatchSensorLogManager: NSObject, ObservableObject {
             motionManager?.stopGyroUpdates()
         }
         
-        self.logger.sendAccelerometerData()
-        self.logger.sendGyroscopeData()
+//        self.logger.sendAccelerometerData()
+//        self.logger.sendGyroscopeData()
     }
 }
 
 
+// 多分いらないクラス
 class WatchSensorLogger {
     var accelerometerData: String
     var gyroscopeData: String

@@ -1,10 +1,10 @@
 //
 //  WatchConnector.swift
-//  Logger6
+//  LoggerWatchPods
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
+
 import Foundation
 import UIKit
 import WatchConnectivity
@@ -86,72 +86,5 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
         let dataDouble = [x, y, z]
         
         return dataDouble
-    }
-    
-    
-}
-
-
-struct WatchSensorData {
-    var accelerometerData: String
-    var gyroscopeData: String
-    
-    private let column = "time,x,y,z\n"
-    
-    public init() {
-        self.accelerometerData = self.column
-        self.gyroscopeData = self.column
-    }
-    
-    mutating func append(line: String, sensorType: SensorType) {
-        switch sensorType {
-        case .watchAccelerometer:
-            self.accelerometerData.append(line)
-        case .watchGyroscope:
-            self.gyroscopeData.append(line)
-        default:
-            print("No data of \(sensorType) is available.")
-        }
-    }
-    
-    // 保存したファイルパスを取得する
-    mutating func getDataURLs(label: String, subject: String) -> [URL] {
-        let format = DateFormatter()
-        format.dateFormat = "yyyyMMddHHmmss"
-        let time = format.string(from: Date())
-        
-        /* 一時ファイルを保存する場所 */
-        let tmppath = NSHomeDirectory() + "/tmp"
-        
-        let apd = "\(time)_\(label)_\(subject)" // 付加する文字列(時間+ラベル+ユーザ名)
-        // ファイル名を生成
-        let accelerometerFilepath = tmppath + "/watch_accelermeter_\(apd).csv"
-        let gyroFilepath = tmppath + "/watch_gyroscope_\(apd).csv"
-        
-        // ファイルを書き出す
-        do {
-            try self.accelerometerData.write(toFile: accelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
-            try self.gyroscopeData.write(toFile: gyroFilepath, atomically: true, encoding: String.Encoding.utf8)
-            
-        }
-        catch let error as NSError{
-            print("Failure to Write File\n\(error)")
-        }
-        
-        /* 書き出したcsvファイルの場所を取得 */
-        var urls = [URL]()
-        urls.append(URL(fileURLWithPath: accelerometerFilepath))
-        urls.append(URL(fileURLWithPath: gyroFilepath))
-
-        // データをリセットする
-        self.resetData()
-        
-        return urls
-    }
-    
-    // データをリセットする
-    mutating func resetData() {
-        self.accelerometerData = self.column
-        self.gyroscopeData = self.column
     }
 }

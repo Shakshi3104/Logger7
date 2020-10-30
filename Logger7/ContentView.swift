@@ -1,73 +1,54 @@
 //
 //  ContentView.swift
-//  Logger6
+//  LoggerWatchPods
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @State private var logStarting = false
+    @State private var isLogStarted = false
     @State private var isSharePresented = false
-    @State private var isEmptySubjectLabel = false
-    @State private var timingChoice = 0
-    @State private var autoChoice = 0
-    @State private var username = ""
-    @State private var label = ""
-    
-    @State private var viewChoise = 0
     
     @ObservedObject var sensorLogger = PhoneSensorManager()
-    
     @ObservedObject var connector = WatchConnector()
     
     @State private var backgroundTaskID: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 3104)
+    
+    @ObservedObject var metadata = MetaData()
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
+                
                 // 保存ボタン
                 Button(action: {
-                    
-                    if self.username.count == 0 || self.label.count == 0 {
-                        // Subject NameかLabelが空だったら
-                        self.isEmptySubjectLabel = true
-                        self.isSharePresented = false
-                        
-                        // Haptic Engineへのフィードバック
-                        let errorFeedback = UINotificationFeedbackGenerator()
-                        errorFeedback.notificationOccurred(.error)
-                    }
-                    else {
-                        self.isEmptySubjectLabel = false
-                        self.isSharePresented = true
-                    }
-                }) {
+                    self.isSharePresented.toggle()
+                }, label: {
                     HStack {
                         Image(systemName: "square.and.arrow.up")
                         Text("Save")
                     }
-                }
-                .sheet(isPresented: $isSharePresented, content: {
-                        // ActivityViewControllerを表示
-                    ActivityViewController(activityItems: self.sensorLogger.data.getURLs(label: self.label, subject: self.username) + self.connector.saver.getDataURLs(label: self.label, subject: self.username), applicationActivities: nil)
-                    })
-                    .alert(isPresented: $isEmptySubjectLabel, content: {
-                        Alert(title: Text("保存できません"), message: Text("Subject NameとLabelを入力してください"))
-                    })
+                })
+                .sheet(isPresented: self.$isSharePresented, content: {
+                    EditView(isPresent: self.$isSharePresented,
+                             metadata: metadata,
+                             sensorLogger: sensorLogger,
+                             connector: connector)
+                })
                 
                 Spacer()
+                
                 // 計測ボタン
                 Button(action: {
-                    self.logStarting.toggle()
+                    self.isLogStarted.toggle()
                     
                     let switchFeedback = UIImpactFeedbackGenerator(style: .medium)
                     switchFeedback.impactOccurred()
                     
-                    if self.logStarting {
+                    if self.isLogStarted {
                         // バックグラウンドタスク
                         self.backgroundTaskID =
                         UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
@@ -88,9 +69,8 @@ struct ContentView: View {
                         self.sensorLogger.stopUpdate()
                         UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
                     }
-                    
-                }) {
-                    if self.logStarting {
+                }, label: {
+                    if isLogStarted {
                         HStack {
                             Image(systemName: "pause.circle")
                             Text("Stop")
@@ -102,203 +82,221 @@ struct ContentView: View {
                             Text("Start")
                         }
                     }
-                }
+                })
+                
                 Spacer()
             }
-            .padding(.horizontal)
-
+            .padding(.vertical)
+            
+            // センサ値の表示
             VStack {
-                // ラベル情報入力
                 HStack {
-                    TextField("Subject Name", text: $username).textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                    
-                    TextField("Label", text: $label).textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                }.padding(.horizontal)
+                    Image(systemName: "iphone")
+                    Text("iPhone").font(.headline)
+                }
                 
+                HStack {
+                    Image(systemName: "speedometer")
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.accX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.accY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.accZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
                 
-                VStack{
-                    HStack {
-                        Image(systemName: "iphone")
-                        Text("iPhone").font(.headline)
-                    }
-                    // センサー値を表示
-                    VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
-                            Text("Accelerometer")
-                                .font(.headline)
-                            
-                            HStack {
-                                Text(String(format: "%.3f", self.sensorLogger.accX))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.3f", self.sensorLogger.accY))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.3f", self.sensorLogger.accZ))
-                                    .multilineTextAlignment(.leading)
-                                
-                            }.padding(.horizontal)
-                        }.padding(.horizontal, 25)
-                            .padding(.vertical, 2)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Gyroscope")
-                            .font(.headline)
-                            
-                            HStack {
-                                Text(String(format: "%.3f", self.sensorLogger.gyrX))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.3f", self.sensorLogger.gyrY))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.3f", self.sensorLogger.gyrZ))
-                                    .multilineTextAlignment(.leading)
-                            }.padding(.horizontal)
-                        }.padding(.horizontal, 25)
-                            .padding(.vertical, 2)
-                        
-                        
-                        VStack(alignment: .leading) {
-                            Text("Magnetometer")
-                                .font(.headline)
-                            
-                            HStack {
-                                Text(String(format: "%.2f", self.sensorLogger.magX))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.2f", self.sensorLogger.magY))
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                                Text(String(format: "%.2f", self.sensorLogger.magZ))
-                                    .multilineTextAlignment(.leading)
-                            }.padding(.horizontal)
-                        }.padding(.horizontal, 25)
-                            .padding(.vertical, 2)
-                    }
-                }.padding(.vertical, 5)
+                HStack {
+                    Image(systemName: "gyroscope")
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.gyrX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.gyrY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.gyrZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
                 
-                VStack {
-                    HStack {
-                        Image(systemName: "applewatch")
-                        Text("Watch").font(.headline)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("Accelerometer")
-                            .font(.headline)
-                        
-                        HStack {
-                            Text(String(format: "%.3f", self.connector.accX))
-                                .multilineTextAlignment(.leading)
-                            Spacer()
-                            Text(String(format: "%.3f", self.connector.accY))
-                                .multilineTextAlignment(.leading)
-                            Spacer()
-                            Text(String(format: "%.3f", self.connector.accZ))
-                                .multilineTextAlignment(.leading)
-                            
-                        }.padding(.horizontal)
-                    }.padding(.horizontal, 25)
-                        .padding(.vertical, 2)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Gyroscope")
-                        .font(.headline)
-                        
-                        HStack {
-                            Text(String(format: "%.3f", self.connector.gyrX))
-                                .multilineTextAlignment(.leading)
-                            Spacer()
-                            Text(String(format: "%.3f", self.connector.gyrY))
-                                .multilineTextAlignment(.leading)
-                            Spacer()
-                            Text(String(format: "%.3f", self.connector.gyrZ))
-                                .multilineTextAlignment(.leading)
-                        }.padding(.horizontal)
-                    }.padding(.horizontal, 25)
-                        .padding(.vertical, 2)
-                    
-                }.padding(.vertical, 5)
-                
-                VStack {
-                    HStack {
-                        Image(systemName: "airpodspro")
-                        Text("AirPods Pro").font(.headline)
-                    }
-
-                     VStack(alignment: .leading) {
-                         Text("Accelerometer")
-                             .font(.headline)
-
-                         HStack {
-                             Text(String(format: "%.3f", self.sensorLogger.headAccX))
-                                 .multilineTextAlignment(.leading)
-                             Spacer()
-                             Text(String(format: "%.3f", self.sensorLogger.headAccY))
-                                 .multilineTextAlignment(.leading)
-                             Spacer()
-                             Text(String(format: "%.3f", self.sensorLogger.headAccZ))
-                                 .multilineTextAlignment(.leading)
-
-                         }.padding(.horizontal)
-                     }.padding(.horizontal, 25)
-                         .padding(.vertical, 2)
-
-                     VStack(alignment: .leading) {
-                         Text("Gyroscope")
-                         .font(.headline)
-
-                         HStack {
-                             Text(String(format: "%.3f", self.sensorLogger.headGyrX))
-                                 .multilineTextAlignment(.leading)
-                             Spacer()
-                             Text(String(format: "%.3f", self.sensorLogger.headGyrY))
-                                 .multilineTextAlignment(.leading)
-                             Spacer()
-                             Text(String(format: "%.3f", self.sensorLogger.headGyrZ))
-                                 .multilineTextAlignment(.leading)
-                         }.padding(.horizontal)
-                     }.padding(.horizontal, 25)
-                         .padding(.vertical, 2)
-                }.padding(.vertical, 5)
+                HStack {
+                    Image(systemName: "safari")
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.magX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.magY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.magZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
             }
+            .padding(.vertical, 10)
             
+            VStack {
+                HStack {
+                    Image(systemName: "applewatch")
+                    Text("Watch").font(.headline)
+                }
+                
+                HStack {
+                    Image(systemName: "speedometer")
+                    Spacer()
+                    Text(String(format: "%.3f", connector.accX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", connector.accY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", connector.accZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
+                
+                HStack {
+                    Image(systemName: "gyroscope")
+                    Spacer()
+                    Text(String(format: "%.3f", connector.gyrX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", connector.gyrY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", connector.gyrZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
+                
+            }
+            .padding(.vertical, 10)
             
+            VStack {
+                HStack {
+                    Image(systemName: "airpodspro")
+                    Text("AirPods Pro").font(.headline)
+                }
+                
+                HStack {
+                    Image(systemName: "speedometer")
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headAccX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headAccY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headAccZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
+                
+                HStack {
+                    Image(systemName: "gyroscope")
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headGyrX))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headGyrY))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(String(format: "%.3f", sensorLogger.headGyrZ))
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 2)
+                
+            }
+            .padding(.vertical, 10)
             
-        }.onTapGesture {
-            // タップしたときにキーボードを下げる
-            UIApplication.shared.endEditing()
         }
     }
 }
 
-// UIActivityViewController on SwiftUI
-struct ActivityViewController: UIViewControllerRepresentable {
 
-    var activityItems: [Any]
-    var applicationActivities: [UIActivity]? = nil
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityViewController>) -> UIActivityViewController {
-        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
-        return controller
+// View for inputting information
+struct EditView: View {
+    @Binding var isPresent: Bool
+    @ObservedObject var metadata: MetaData
+    @ObservedObject var sensorLogger: PhoneSensorManager
+    @ObservedObject var connector: WatchConnector
+    
+    @State var isSharedPresent = false
+    @State var isEmptyMetadata = false
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("What's your name?")) {
+                    TextField("Subject Name", text: $metadata.name)
+                }
+                
+                Section(header: Text("What's label?")) {
+                    TextField("Label", text: $metadata.label)
+                }
+            }
+            .navigationBarTitle("Input Information", displayMode: .inline)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                        if metadata.name.isEmpty || metadata.label.isEmpty {
+                                            self.isSharedPresent = false
+                                            self.isEmptyMetadata = true
+                                        }
+                                        else {
+                                            self.isSharedPresent = true
+                                            self.isEmptyMetadata = false
+                                        }
+                                    }, label: {
+                                        Image(systemName: "square.and.arrow.up")
+                                    })
+                                    .sheet(isPresented: $isSharedPresent, content: {
+                                        ActivityView(activityItems: sensorLogger.data.getURLs(label: metadata.label, subject: metadata.name) + connector.saver.getDataURLs(label: metadata.label, subject: metadata.name), applicationActivities: nil)
+                                    })
+                                    .alert(isPresented: $isEmptyMetadata, content: {
+                                        Alert(title: Text("保存できません"), message: Text("Subject NameとLabelを入力してください"))
+                                    }),
+                                trailing:
+                                    Button(action: {
+                                        self.isPresent = false
+                                    }
+                                    , label: {
+                                        Text("Done")
+                                    })
+                                    
+            )
+        }
     }
-
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityViewController>) {}
-
 }
+
+
+// ActivityViewController
+struct ActivityView: UIViewControllerRepresentable {
+    let activityItems: [Any]
+    let applicationActivities: [UIActivity]?
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+        return UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {
+        // Nothing to do
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-// extension for keyboard to dismiss
-extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

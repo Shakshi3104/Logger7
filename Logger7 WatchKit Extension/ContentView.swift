@@ -1,17 +1,15 @@
 //
 //  ContentView.swift
-//  Logger6 WatchKit Extension
+//  LoggerWatchPods WatchKit Extension
 //
-//  Created by MacBook Pro on 2020/08/02.
-//  Copyright © 2020 MacBook Pro. All rights reserved.
+//  Created by Satoshi on 2020/10/30.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     @State private var logStarting = false
-  
-    @ObservedObject var sensorLogger = WatchSensorLogManager()
+    @ObservedObject var sensorLogger = WatchSensorManager()
     
     var body: some View {
         VStack {

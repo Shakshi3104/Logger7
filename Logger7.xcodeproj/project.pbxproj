@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE4612AC2521D0CA0088CBC8 /* PhoneSensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */; };
 		CE4612B82521D4850088CBC8 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612B72521D4850088CBC8 /* SensorType.swift */; };
 		CE4612B92521D4850088CBC8 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612B72521D4850088CBC8 /* SensorType.swift */; };
 		CE4612C12521D4F70088CBC8 /* WatchSensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */; };
@@ -20,6 +19,14 @@
 		CE77029224D696A900794923 /* IMG_4155.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028F24D696A900794923 /* IMG_4155.PNG */; };
 		CE77029324D696A900794923 /* IMG_4156.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029024D696A900794923 /* IMG_4156.PNG */; };
 		CE77029524D697D600794923 /* IMG_4158.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77029424D697D600794923 /* IMG_4158.PNG */; };
+		CEB8DE91254BFF10009DEB1F /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8E254BFF10009DEB1F /* SensorData.swift */; };
+		CEB8DE92254BFF10009DEB1F /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8F254BFF10009DEB1F /* MetaData.swift */; };
+		CEB8DE93254BFF10009DEB1F /* TimestampUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */; };
+		CEB8DE9A254BFF89009DEB1F /* TimestampUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */; };
+		CEB8DEA0254C06B5009DEB1F /* IMG_1729.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DE9E254C06B5009DEB1F /* IMG_1729.png */; };
+		CEB8DEA1254C06B5009DEB1F /* IMG_1727.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */; };
+		CEB8DEA7254C072F009DEB1F /* IMG_4338.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */; };
+		CEB8DEA8254C072F009DEB1F /* IMG_4339.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */; };
 		CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */; };
 		CEBA6F3E24D6594A008194F8 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */; };
 		CEEF6F9324D64AB50015ED13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */; };
@@ -86,7 +93,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorData.swift; sourceTree = "<group>"; };
 		CE4612B72521D4850088CBC8 /* SensorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorType.swift; sourceTree = "<group>"; };
 		CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSensorData.swift; sourceTree = "<group>"; };
 		CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4301.PNG; sourceTree = "<group>"; };
@@ -96,6 +102,13 @@
 		CE77028F24D696A900794923 /* IMG_4155.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4155.PNG; sourceTree = "<group>"; };
 		CE77029024D696A900794923 /* IMG_4156.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4156.PNG; sourceTree = "<group>"; };
 		CE77029424D697D600794923 /* IMG_4158.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4158.PNG; sourceTree = "<group>"; };
+		CEB8DE8E254BFF10009DEB1F /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
+		CEB8DE8F254BFF10009DEB1F /* MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
+		CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampUtils.swift; sourceTree = "<group>"; };
+		CEB8DE9E254C06B5009DEB1F /* IMG_1729.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1729.png; sourceTree = "<group>"; };
+		CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1727.png; sourceTree = "<group>"; };
+		CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4338.PNG; sourceTree = "<group>"; };
+		CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4339.PNG; sourceTree = "<group>"; };
 		CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		CEEF6F8F24D64AB50015ED13 /* Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +159,10 @@
 		CE77028D24D6967600794923 /* materials */ = {
 			isa = PBXGroup;
 			children = (
+				CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */,
+				CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */,
+				CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */,
+				CEB8DE9E254C06B5009DEB1F /* IMG_1729.png */,
 				CE4612F32521E2810088CBC8 /* IMG_4302.PNG */,
 				CE4612EB2521E21B0088CBC8 /* IMG_4301.PNG */,
 				CE77029424D697D600794923 /* IMG_4158.PNG */,
@@ -181,6 +198,9 @@
 		CEEF6F9124D64AB50015ED13 /* Logger7 */ = {
 			isa = PBXGroup;
 			children = (
+				CEB8DE8F254BFF10009DEB1F /* MetaData.swift */,
+				CEB8DE8E254BFF10009DEB1F /* SensorData.swift */,
+				CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */,
 				CE63A0BA2547A4B900B65CEA /* Settings.bundle */,
 				CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */,
 				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
@@ -190,7 +210,6 @@
 				CEEF6FA024D64AB80015ED13 /* Info.plist */,
 				CEEF6F9A24D64AB80015ED13 /* Preview Content */,
 				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
-				CE4612AB2521D0CA0088CBC8 /* PhoneSensorData.swift */,
 				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
 				CE4612B72521D4850088CBC8 /* SensorType.swift */,
 			);
@@ -344,13 +363,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB8DEA8254C072F009DEB1F /* IMG_4339.PNG in Resources */,
 				CE77029124D696A900794923 /* IMG_4157.PNG in Resources */,
 				CEEF6F9F24D64AB80015ED13 /* LaunchScreen.storyboard in Resources */,
 				CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */,
+				CEB8DEA7254C072F009DEB1F /* IMG_4338.PNG in Resources */,
+				CEB8DEA0254C06B5009DEB1F /* IMG_1729.png in Resources */,
 				CE77029224D696A900794923 /* IMG_4155.PNG in Resources */,
 				CE4612F42521E2810088CBC8 /* IMG_4302.PNG in Resources */,
 				CE4612EC2521E21B0088CBC8 /* IMG_4301.PNG in Resources */,
 				CE77029524D697D600794923 /* IMG_4158.PNG in Resources */,
+				CEB8DEA1254C06B5009DEB1F /* IMG_1727.png in Resources */,
 				CE77029324D696A900794923 /* IMG_4156.PNG in Resources */,
 				CEEF6F9C24D64AB80015ED13 /* Preview Assets.xcassets in Resources */,
 				CEEF6F9924D64AB80015ED13 /* Assets.xcassets in Resources */,
@@ -386,11 +409,13 @@
 			files = (
 				CEEF6F9324D64AB50015ED13 /* AppDelegate.swift in Sources */,
 				CE4612B82521D4850088CBC8 /* SensorType.swift in Sources */,
+				CEB8DE93254BFF10009DEB1F /* TimestampUtils.swift in Sources */,
 				CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */,
 				CEEF6F9524D64AB50015ED13 /* SceneDelegate.swift in Sources */,
 				CEEF6FF224D64AF80015ED13 /* PhoneSensorLogger.swift in Sources */,
-				CE4612AC2521D0CA0088CBC8 /* PhoneSensorData.swift in Sources */,
+				CEB8DE92254BFF10009DEB1F /* MetaData.swift in Sources */,
 				CEEF6F9724D64AB50015ED13 /* ContentView.swift in Sources */,
+				CEB8DE91254BFF10009DEB1F /* SensorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +425,7 @@
 			files = (
 				CE4612C12521D4F70088CBC8 /* WatchSensorData.swift in Sources */,
 				CEEF6FD024D64AB90015ED13 /* HostingController.swift in Sources */,
+				CEB8DE9A254BFF89009DEB1F /* TimestampUtils.swift in Sources */,
 				CEEF6FCE24D64AB90015ED13 /* ContentView.swift in Sources */,
 				CEBA6F3E24D6594A008194F8 /* PhoneConnector.swift in Sources */,
 				CEEF6FD424D64AB90015ED13 /* NotificationController.swift in Sources */,
