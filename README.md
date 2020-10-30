@@ -31,7 +31,7 @@ Home | Input Info | Setting App
 |6.1.0|2020/8/2| Implement the function to transfer data from Apple Watch to iPhone and save to CSV file|
 |7.0.0|2020/9/28| Added the function to record the motion of the AirPods Pro implemented in [Logger5](https://github.com/Shakshi3104/Logger5) |
 |7.1.0|2020/10/27| Added the function to change the sampling frequency in Settings app |
-|7.2.0|2020//10/30| Improved UI and fixed a bug that occurs in iOS 14 |
+|7.2.0|2020/10/30| Improved UI and fixed a bug that occurs in iOS 14 |
 
 
 ## Logger Series
