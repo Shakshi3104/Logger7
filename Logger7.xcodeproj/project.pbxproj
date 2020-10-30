@@ -20,6 +20,7 @@
 		CEB8DEA1254C06B5009DEB1F /* IMG_1727.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */; };
 		CEB8DEA7254C072F009DEB1F /* IMG_4338.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */; };
 		CEB8DEA8254C072F009DEB1F /* IMG_4339.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */; };
+		CEB8DEB0254C082A009DEB1F /* IMG_0749.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8DEAF254C082A009DEB1F /* IMG_0749.png */; };
 		CEBA6F3C24D6592D008194F8 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */; };
 		CEBA6F3E24D6594A008194F8 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */; };
 		CEEF6F9324D64AB50015ED13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 		CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1727.png; sourceTree = "<group>"; };
 		CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4338.PNG; sourceTree = "<group>"; };
 		CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4339.PNG; sourceTree = "<group>"; };
+		CEB8DEAF254C082A009DEB1F /* IMG_0749.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0749.png; sourceTree = "<group>"; };
 		CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		CEEF6F8F24D64AB50015ED13 /* Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 		CE77028D24D6967600794923 /* materials */ = {
 			isa = PBXGroup;
 			children = (
+				CEB8DEAF254C082A009DEB1F /* IMG_0749.png */,
 				CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */,
 				CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */,
 				CEB8DE9F254C06B5009DEB1F /* IMG_1727.png */,
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB8DEA8254C072F009DEB1F /* IMG_4339.PNG in Resources */,
+				CEB8DEB0254C082A009DEB1F /* IMG_0749.png in Resources */,
 				CE77029124D696A900794923 /* IMG_4157.PNG in Resources */,
 				CEEF6F9F24D64AB80015ED13 /* LaunchScreen.storyboard in Resources */,
 				CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */,

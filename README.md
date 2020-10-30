@@ -41,3 +41,7 @@ Home | Input Info | Setting App
 - [Logger-with-watch](https://github.com/Shakshi3104/Logger6) : Logger for iPhone and Apple Watch, implemented using SwiftUI, available on iOS 13.0+ and watchOS 6.0+.
 - [Logger-with-AirPods Pro](https://github.com/Shakshi3104/Logger5/tree/headphone) : Logger for iPhone and AirPods Pro, implemented using SwiftUI, available on iOS 14.0+.
 - [Logger-all-device](https://github.com/Shakshi3104/Logger7) : Logger for iPhone, Apple Watch, and AirPods Pro, implemented using SwiftUI, available on iOS 14.0+ and watchOS 7.0+.
+
+|Logger Series|
+|:--------------:|
+|![Series](materials/IMG_0749.png)|
