@@ -184,20 +184,20 @@
 		CEEF6F9124D64AB50015ED13 /* Logger7 */ = {
 			isa = PBXGroup;
 			children = (
-				CEB8DE8F254BFF10009DEB1F /* MetaData.swift */,
-				CEB8DE8E254BFF10009DEB1F /* SensorData.swift */,
-				CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */,
 				CE63A0BA2547A4B900B65CEA /* Settings.bundle */,
+				CEEF6FA024D64AB80015ED13 /* Info.plist */,
 				CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */,
-				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
 				CEEF6F9624D64AB50015ED13 /* ContentView.swift */,
+				CEB8DE8F254BFF10009DEB1F /* MetaData.swift */,
+				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
+				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
+				CEB8DE8E254BFF10009DEB1F /* SensorData.swift */,
+				CE4612B72521D4850088CBC8 /* SensorType.swift */,
+				CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */,
+				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
 				CEEF6F9824D64AB80015ED13 /* Assets.xcassets */,
 				CEEF6F9D24D64AB80015ED13 /* LaunchScreen.storyboard */,
-				CEEF6FA024D64AB80015ED13 /* Info.plist */,
 				CEEF6F9A24D64AB80015ED13 /* Preview Content */,
-				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
-				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
-				CE4612B72521D4850088CBC8 /* SensorType.swift */,
 			);
 			path = Logger7;
 			sourceTree = "<group>";
@@ -582,7 +582,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -607,7 +607,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -627,7 +627,7 @@
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -647,7 +647,7 @@
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -672,7 +672,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -694,7 +694,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
