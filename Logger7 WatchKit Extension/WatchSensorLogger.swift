@@ -8,11 +8,12 @@
 import Foundation
 import CoreMotion
 import Combine
+import WatchKit
 
 
-class WatchSensorManager: NSObject, ObservableObject {
+class WatchSensorManager: NSObject, ObservableObject, WKExtendedRuntimeSessionDelegate {
+    
     var motionManager: CMMotionManager?
-    var logger = WatchSensorLogger()
     var data = SensorData()
     
     @Published var accX = 0.0
@@ -25,6 +26,8 @@ class WatchSensorManager: NSObject, ObservableObject {
     private var samplingFrequency = 50.0
     
     var timer = Timer()
+    
+    var session: WKExtendedRuntimeSession!
     
     override init() {
         super.init()
@@ -87,6 +90,11 @@ class WatchSensorManager: NSObject, ObservableObject {
         
         self.samplingFrequency = freq
         
+        // Extended Runtime Session
+        self.session = WKExtendedRuntimeSession()
+        self.session.delegate = self
+        self.session.start()
+        
         // プル型でデータ取得
         self.timer = Timer.scheduledTimer(timeInterval: 1.0 / freq,
                            target: self,
@@ -105,85 +113,23 @@ class WatchSensorManager: NSObject, ObservableObject {
         if motionManager!.isGyroActive {
             motionManager?.stopGyroUpdates()
         }
-        
-//        self.logger.sendAccelerometerData()
-//        self.logger.sendGyroscopeData()
-    }
-}
-
-
-// 多分いらないクラス
-class WatchSensorLogger {
-    var accelerometerData: String
-    var gyroscopeData: String
-    
-    // 1秒毎にiPhoneに送信するデータ
-    private var accelerometerDataSec: String
-    private var gyroscopeDataSec: String
-    
-    // iPhone側にデータを送信するため
-    var connector = PhoneConnector()
-    
-    public init() {
-        let column = "time,x,y,z\n"
-        self.accelerometerData = column
-        self.gyroscopeData = column
-        self.accelerometerDataSec = ""
-        self.gyroscopeDataSec = ""
+ 
+        self.session.invalidate()
     }
     
-    // タイムスタンプを取得する
-    func getTimestamp() -> String {
-        let format = DateFormatter()
-        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-        return format.string(from: Date())
+    // For Extended Runtime Session
+    func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
+        let timestamp = getTimestamp()
+        print("\(timestamp): didInvalidateWith reason=\(reason)")
     }
     
-    /* センサデータを保存する */
-    func logAccelerometerData(time: String, x: Double, y: Double, z: Double) {
-        var line = time + ","
-        line.append(contentsOf: String(x) + ",")
-        line.append(contentsOf: String(y) + ",")
-        line.append(contentsOf: String(z) + "\n")
-        
-        self.accelerometerData.append(contentsOf: line)
-        self.accelerometerDataSec.append(contentsOf: line)
+    func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+        let timestamp = getTimestamp()
+        print("\(timestamp): extendedRuntimeSessionDidStart")
     }
     
-    func logGyroscopeData(time: String, x: Double, y: Double, z: Double) {
-        var line = time + ","
-        line.append(contentsOf: String(x) + ",")
-        line.append(contentsOf: String(y) + ",")
-        line.append(contentsOf: String(z) + "\n")
-        
-        self.gyroscopeData.append(contentsOf: line)
-        self.gyroscopeDataSec.append(contentsOf: line)
-    }
-    
-    // データをリセットする
-    func resetData() {
-        let column = "time,x,y,z\n"
-        self.accelerometerData = column
-        self.gyroscopeData = column
-        
-        self.accelerometerDataSec = ""
-        self.gyroscopeDataSec = ""
-    }
-    
-    // iPhone側にcsv形式のStringを送信する
-    func sendAccelerometerData() {
-        print("Size: \(self.accelerometerDataSec.lengthOfBytes(using: String.Encoding.utf8)) byte")
-        
-        if self.connector.send(key: "ACC_DATA", value: self.accelerometerDataSec) {
-            self.accelerometerDataSec = ""
-        }
-    }
-    
-    func sendGyroscopeData() {
-        print("Size: \(self.gyroscopeDataSec.lengthOfBytes(using: String.Encoding.utf8)) byte")
-        
-        if self.connector.send(key: "GYR_DATA", value: self.gyroscopeDataSec) {
-            self.gyroscopeDataSec = ""
-        }
+    func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+        let timestamp = getTimestamp()
+        print("\(timestamp): extendedRuntimeSessionWillExpire")
     }
 }

@@ -70,4 +70,8 @@ struct SensorData {
             self.gyroscopeDataSec = ""
         }
     }
+    
+    mutating func sendDataAfterStop() {
+        print("All Size: \(self.accelerometerData.lengthOfBytes(using: String.Encoding.utf8)) byte")
+    }
 }

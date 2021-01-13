@@ -246,7 +246,7 @@ struct EditView: View {
                     TextField("Label", text: $metadata.label)
                 }
             }
-            .navigationBarTitle("Input Information", displayMode: .inline)
+            .navigationBarTitle("Send Data", displayMode: .inline)
             .navigationBarItems(leading:
                                     Button(action: {
                                         if metadata.name.isEmpty || metadata.label.isEmpty {
