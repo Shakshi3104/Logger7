@@ -252,6 +252,10 @@ struct EditView: View {
                                         if metadata.name.isEmpty || metadata.label.isEmpty {
                                             self.isSharedPresent = false
                                             self.isEmptyMetadata = true
+                                            
+                                            // Haptic Engineへのフィードバック
+                                            let errorFeedback = UINotificationFeedbackGenerator()
+                                            errorFeedback.notificationOccurred(.error)
                                         }
                                         else {
                                             self.isSharedPresent = true
