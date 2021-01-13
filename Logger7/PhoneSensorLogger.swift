@@ -127,7 +127,7 @@ class PhoneSensorManager: NSObject, ObservableObject {
         self.data.append(time: timestamp, x: self.headAccX, y: self.headAccY, z: self.headAccZ, sensorType: .headphoneAccelerometer)
         self.data.append(time: timestamp, x: self.headGyrX, y: self.headGyrY, z: self.headGyrZ, sensorType: .headphoneGyroscope)
         
-        print(timestamp + ", \(self.headAccX), \(self.headAccY), \(self.headAccZ)")
+        print("head acc \(timestamp), \(self.headAccX), \(self.headAccY), \(self.headAccZ)")
         
     }
     
