@@ -43,46 +43,31 @@ struct ContentView: View {
                 
                 // 計測ボタン
                 Button(action: {
-                    self.isLogStarted.toggle()
                     
-                    let switchFeedback = UIImpactFeedbackGenerator(style: .medium)
-                    switchFeedback.impactOccurred()
-                    
-                    if self.isLogStarted {
-                        // バックグラウンドタスク
-                        self.backgroundTaskID =
-                        UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-                        
-                        // 計測スタート
-                        var samplingFrequency = UserDefaults.standard.integer(forKey: "frequency_preference")
-                                                
-                        print("sampling frequency = \(samplingFrequency)")
-                        
-                        // なぜかサンプリング周波数が0のときは100にしておく
-                        if samplingFrequency == 0 {
-                            samplingFrequency = 100
-                        }
-                        
-                        self.sensorLogger.startUpdate(Double(samplingFrequency))
-                    }
-                    else {
-                        self.sensorLogger.stopUpdate()
-                        UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
-                    }
-                }, label: {
+                }) {
                     if isLogStarted {
+                        // ダブルタップ or 長押しで計測をストップ
                         HStack {
                             Image(systemName: "pause.circle")
                             Text("Stop")
+                        }
+                        .onTapGesture(count: 2, perform: {
+                            self.action(true)
+                        })
+                        .onLongPressGesture {
+                            self.action(true)
                         }
                     }
                     else {
                         HStack {
                             Image(systemName: "play.circle")
                             Text("Start")
+                        }.onTapGesture {
+                            self.action(false)
                         }
+                        
                     }
-                })
+                }
                 
                 Spacer()
             }
@@ -220,6 +205,41 @@ struct ContentView: View {
             }
             .padding(.vertical, 10)
             
+        }
+    }
+    
+    func action(_ LargeFeedback: Bool) {
+        self.isLogStarted.toggle()
+        
+        let switchFeedback: UIImpactFeedbackGenerator
+        if LargeFeedback {
+            switchFeedback = UIImpactFeedbackGenerator(style: .heavy)
+        }
+        else {
+            switchFeedback = UIImpactFeedbackGenerator(style: .medium)
+        }
+        switchFeedback.impactOccurred()
+        
+        if self.isLogStarted {
+            // バックグラウンドタスク
+            self.backgroundTaskID =
+            UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+            
+            // 計測スタート
+            var samplingFrequency = UserDefaults.standard.integer(forKey: "frequency_preference")
+                                    
+            print("sampling frequency = \(samplingFrequency)")
+            
+            // なぜかサンプリング周波数が0のときは100にしておく
+            if samplingFrequency == 0 {
+                samplingFrequency = 100
+            }
+            
+            self.sensorLogger.startUpdate(Double(samplingFrequency))
+        }
+        else {
+            self.sensorLogger.stopUpdate()
+            UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
         }
     }
 }
