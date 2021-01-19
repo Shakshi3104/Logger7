@@ -15,7 +15,7 @@ Home | Input Info | Setting App
 
 ## Version
 
-7.3.0
+7.3.1
 
 ## Requirements
 - iOS 14.0+
@@ -33,6 +33,7 @@ Home | Input Info | Setting App
 |7.1.0|2020/10/27| Added the function to change the sampling frequency in Settings app |
 |7.2.0|2020/10/30| Improved UI and fixed a bug that occurs in iOS 14 |
 |7.3.0|2021/1/13|<ul><li>Implemented Extended Runtime Session (watchOS)</li><li>Stop button is only available by double tapping or long pressing (iOS)</li></ul> |
+|7.3.1|2020/1/19|Changed to send the data together after the measurement is finished |
 
 
 ## Logger Series
