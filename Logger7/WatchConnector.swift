@@ -42,11 +42,12 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("Phone: didReceive: \(message)")
+//        print("Phone: didReceive: \(message)")
         
         DispatchQueue.main.async {
+            // iPhone appで表示する用
             if let accData = message["ACC_DATA"] as? String {
-                self.saver.append(line: accData, sensorType: .watchAccelerometer)
+//                self.saver.append(line: accData, sensorType: .watchAccelerometer)
                 
                 if accData.count != 0 {
                     // iPhone上で表示する
@@ -58,7 +59,7 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
             }
             
             if let gyrData = message["GYR_DATA"] as? String {
-                self.saver.append(line: gyrData, sensorType: .watchGyroscope)
+//                self.saver.append(line: gyrData, sensorType: .watchGyroscope)
                 
                 if gyrData.count != 0 {
                     let gyrDataDouble = self.stringToDouble(data: gyrData)
@@ -66,6 +67,17 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
                     self.gyrY = gyrDataDouble[1]
                     self.gyrZ = gyrDataDouble[2]
                 }
+            }
+            
+            // データ保存用
+            if let accAllData = message["ACC_ALL"] as? String {
+                self.saver.append(line: accAllData, sensorType: .watchAccelerometer)
+                print("Received")
+            }
+            
+            if let gyrAllData = message["GYR_ALL"] as? String {
+                self.saver.append(line: gyrAllData, sensorType: .watchGyroscope)
+                print("Received")
             }
         }
     }

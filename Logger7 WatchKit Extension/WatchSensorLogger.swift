@@ -74,8 +74,8 @@ class WatchSensorManager: NSObject, ObservableObject, WKExtendedRuntimeSessionDe
         
         print("Watch: \(timestamp), acc (\(self.accX), \(self.accY), \(self.accZ)), gyr (\(self.gyrX), \(self.gyrY), \(self.gyrZ))")
         
-        self.data.sendAccelerometerData()
-        self.data.sendGyroscopeData()
+//        self.data.sendAccelerometerData()
+//        self.data.sendGyroscopeData()
     }
     
     func startUpdate(_ freq: Double) {
@@ -113,6 +113,10 @@ class WatchSensorManager: NSObject, ObservableObject, WKExtendedRuntimeSessionDe
         if motionManager!.isGyroActive {
             motionManager?.stopGyroUpdates()
         }
+        
+        // 約40KBごとに送る
+        self.data.sendDataAfterStop(splitSize: 40)
+        self.data.reset()
  
         self.session.invalidate()
     }
