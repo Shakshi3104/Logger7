@@ -11,6 +11,7 @@
 		CE4612B92521D4850088CBC8 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612B72521D4850088CBC8 /* SensorType.swift */; };
 		CE4612C12521D4F70088CBC8 /* WatchSensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */; };
 		CE63A0BB2547A4B900B65CEA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE63A0BA2547A4B900B65CEA /* Settings.bundle */; };
+		CE7302EC25C0062400388AAA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7302EB25C0062400388AAA /* ComplicationController.swift */; };
 		CE77029124D696A900794923 /* IMG_4157.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CE77028E24D696A900794923 /* IMG_4157.PNG */; };
 		CEB8DE91254BFF10009DEB1F /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8E254BFF10009DEB1F /* SensorData.swift */; };
 		CEB8DE92254BFF10009DEB1F /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8DE8F254BFF10009DEB1F /* MetaData.swift */; };
@@ -90,6 +91,7 @@
 		CE4612B72521D4850088CBC8 /* SensorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorType.swift; sourceTree = "<group>"; };
 		CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSensorData.swift; sourceTree = "<group>"; };
 		CE63A0BA2547A4B900B65CEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CE7302EB25C0062400388AAA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CE77028E24D696A900794923 /* IMG_4157.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4157.PNG; sourceTree = "<group>"; };
 		CEB8DE8E254BFF10009DEB1F /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		CEB8DE8F254BFF10009DEB1F /* MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				CEEF6FF324D64E4F0015ED13 /* WatchSensorLogger.swift */,
 				CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */,
 				CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */,
+				CE7302EB25C0062400388AAA /* ComplicationController.swift */,
 			);
 			path = "Logger7 WatchKit Extension";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				CEEF6FD424D64AB90015ED13 /* NotificationController.swift in Sources */,
 				CEEF6FD224D64AB90015ED13 /* ExtensionDelegate.swift in Sources */,
 				CEEF6FD624D64AB90015ED13 /* NotificationView.swift in Sources */,
+				CE7302EC25C0062400388AAA /* ComplicationController.swift in Sources */,
 				CEEF6FF424D64E4F0015ED13 /* WatchSensorLogger.swift in Sources */,
 				CE4612B92521D4850088CBC8 /* SensorType.swift in Sources */,
 			);
@@ -573,7 +577,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger7 WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,7 +586,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -598,7 +602,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger7 WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,7 +611,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -623,11 +627,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -643,11 +647,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				IBSC_MODULE = Logger7_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7 WatchKit App/Info.plist";
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -663,7 +667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger7/Preview Content\"";
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -672,7 +676,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all";
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -685,7 +689,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger7/Preview Content\"";
-				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				DEVELOPMENT_TEAM = 8X9QB9YSVW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Logger7/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -694,7 +698,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Xer.Logger7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Xer.Logger-all";
 				PRODUCT_NAME = Logger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
