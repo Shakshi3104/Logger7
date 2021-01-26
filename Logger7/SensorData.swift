@@ -63,7 +63,7 @@ struct SensorData {
         
         let apd = "\(time)_\(label)_\(subject)" // 付加する文字列(時間+ラベル+ユーザ名)
         // ファイル名を生成
-        let accelerometerFilepath = tmppath + "/phone_accelermeter_\(apd).csv"
+        let accelerometerFilepath = tmppath + "/phone_accelerometer_\(apd).csv"
         let gyroFilepath = tmppath + "/phone_gyroscope_\(apd).csv"
         let magnetFilepath = tmppath + "/phone_magnetometer_\(apd).csv"
         
@@ -145,7 +145,7 @@ struct WatchSensorData {
         
         let apd = "\(time)_\(label)_\(subject)" // 付加する文字列(時間+ラベル+ユーザ名)
         // ファイル名を生成
-        let accelerometerFilepath = tmppath + "/watch_accelermeter_\(apd).csv"
+        let accelerometerFilepath = tmppath + "/watch_accelerometer_\(apd).csv"
         let gyroFilepath = tmppath + "/watch_gyroscope_\(apd).csv"
         
         // ファイルを書き出す
