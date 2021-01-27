@@ -7,6 +7,7 @@
 //
 
 import ClockKit
+import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Complication Configuration
@@ -50,9 +51,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
             switch complication.family {
             case .graphicCorner:
-                return CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(systemName: "barometer")!))
+                return CLKComplicationTemplateGraphicCornerTextView(textProvider: CLKTextProvider(format: "Logger"), label: Image(systemName: "barometer"))
             case .graphicCircular:
-                return CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(systemName: "barometer")!))
+                return CLKComplicationTemplateGraphicCircularStackViewText(content: Image(systemName: "barometer"), textProvider: CLKTextProvider(format: "Logger"))
             case .circularSmall:
                 return CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(systemName: "barometer")!))
             default:
@@ -76,4 +77,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 handler(nil)
             }
         }
+}
+
+
+struct ComplicationController_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CLKComplicationTemplateGraphicCircularStackViewText(content: Image(systemName: "barometer"), textProvider: CLKTextProvider(format: "Logger")).previewContext()
+            CLKComplicationTemplateGraphicCornerTextView(textProvider: CLKTextProvider(format: "Logger"), label: Image(systemName: "barometer")).previewContext()
+            
+            CLKComplicationTemplateGraphicCircularStackViewText(content: Image(systemName: "barometer"), textProvider: CLKTextProvider(format: "Logger")).previewContext(faceColor: .blue)
+            CLKComplicationTemplateGraphicCornerTextView(textProvider: CLKTextProvider(format: "Logger"), label: Image(systemName: "barometer")).previewContext(faceColor: .blue)
+        }
+    }
 }
