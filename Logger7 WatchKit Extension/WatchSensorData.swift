@@ -40,8 +40,8 @@ struct SensorData {
     mutating func append(time: String, x: Double, y: Double, z: Double, sensorType: SensorType) {
         var line = time + ","
         line.append(String(x) + ",")
-        line.append(String(x) + ",")
-        line.append(String(x) + "\n")
+        line.append(String(y) + ",")
+        line.append(String(z) + "\n")
         
         switch sensorType {
         case .watchAccelerometer:
