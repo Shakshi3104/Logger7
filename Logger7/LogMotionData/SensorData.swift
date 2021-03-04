@@ -50,8 +50,8 @@ struct SensorData {
         }
     }
     
-    // 保存したファイルパスを取得する
-    mutating func getURLs(label: String, subject: String) -> [URL] {
+    
+    mutating func getURLs(label: String, subject: String) -> SensorDataRecord {
         let format = DateFormatter()
         format.dateFormat = "yyyyMMddHHmmss"
         let time = format.string(from: Date())
@@ -72,12 +72,18 @@ struct SensorData {
         
         // ファイルを書き出す
         do {
-            try self.accelerometerData.write(toFile: accelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
-            try self.gyroscopeData.write(toFile: gyroFilepath, atomically: true, encoding: String.Encoding.utf8)
-            try self.magnetometerData.write(toFile: magnetFilepath, atomically: true, encoding: String.Encoding.utf8)
+            // データを計測していなければ保存しない
+            if self.accelerometerData != self.column {
+                try self.accelerometerData.write(toFile: accelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
+                try self.gyroscopeData.write(toFile: gyroFilepath, atomically: true, encoding: String.Encoding.utf8)
+                try self.magnetometerData.write(toFile: magnetFilepath, atomically: true, encoding: String.Encoding.utf8)
+            }
             
-            try self.headphoneAccelerometerData.write(toFile: headphoneAccelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
-            try self.headphoneGyroscopeData.write(toFile: headphoneGyroscopeFilepath, atomically: true, encoding: String.Encoding.utf8)
+            // データを計測していなければ保存しない
+            if self.headphoneAccelerometerData != self.column {
+                try self.headphoneAccelerometerData.write(toFile: headphoneAccelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
+                try self.headphoneGyroscopeData.write(toFile: headphoneGyroscopeFilepath, atomically: true, encoding: String.Encoding.utf8)
+            }
         }
         catch let error as NSError{
             print("Failure to Write File\n\(error)")
@@ -85,17 +91,37 @@ struct SensorData {
         
         /* 書き出したcsvファイルの場所を取得 */
         var urls = [URL]()
-        urls.append(URL(fileURLWithPath: accelerometerFilepath))
-        urls.append(URL(fileURLWithPath: gyroFilepath))
-        urls.append(URL(fileURLWithPath: magnetFilepath))
         
-        urls.append(URL(fileURLWithPath: headphoneAccelerometerFilepath))
-        urls.append(URL(fileURLWithPath: headphoneGyroscopeFilepath))
+        // 計測したデバイスの種類
+        var deviceTypes = [DeviceType]()
+        
+        if self.accelerometerData != self.column {
+            deviceTypes.append(.phone)
+            
+            urls.append(URL(fileURLWithPath: accelerometerFilepath))
+            urls.append(URL(fileURLWithPath: gyroFilepath))
+            urls.append(URL(fileURLWithPath: magnetFilepath))
+        }
+        
+        if self.headphoneAccelerometerData != self.column {
+            deviceTypes.append(.headphone)
+            
+            urls.append(URL(fileURLWithPath: headphoneAccelerometerFilepath))
+            urls.append(URL(fileURLWithPath: headphoneGyroscopeFilepath))
+        }
         
         // データをリセットする
         self.reset()
+         
+        let record = SensorDataRecord(timestamp: time, urls: urls, deviceTypes: deviceTypes)
+        return record
+    }
+    
+    // 保存したファイルパスを取得する
+    mutating func getURLs(label: String, subject: String) -> [URL] {
+        let record: SensorDataRecord = self.getURLs(label: label, subject: subject)
         
-        return urls
+        return record.urls
     }
     
     // データをリセットする
@@ -132,8 +158,11 @@ struct WatchSensorData {
         }
     }
     
-    // 保存したファイルパスを取得する
-    mutating func getDataURLs(label: String, subject: String) -> [URL] {
+    mutating func getDataURLs(label: String, subject: String) -> SensorDataRecord? {
+        if self.accelerometerData == self.column {
+            return nil
+        }
+        
         let format = DateFormatter()
         format.dateFormat = "yyyyMMddHHmmss"
         let time = format.string(from: Date())
@@ -152,7 +181,6 @@ struct WatchSensorData {
         do {
             try self.accelerometerData.write(toFile: accelerometerFilepath, atomically: true, encoding: String.Encoding.utf8)
             try self.gyroscopeData.write(toFile: gyroFilepath, atomically: true, encoding: String.Encoding.utf8)
-            
         }
         catch let error as NSError{
             print("Failure to Write File\n\(error)")
@@ -166,7 +194,15 @@ struct WatchSensorData {
         // データをリセットする
         self.resetData()
         
-        return urls
+        let record = SensorDataRecord(timestamp: time, urls: urls, deviceTypes: [.watch])
+        return record
+    }
+    
+    // 保存したファイルパスを取得する
+    mutating func getDataURLs(label: String, subject: String) -> [URL] {
+        let record: SensorDataRecord? = getDataURLs(label: label, subject: subject)
+        
+        return record?.urls ?? [URL]()
     }
     
     // データをリセットする

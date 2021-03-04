@@ -5,9 +5,9 @@ This application can measure acceleraton data, gyroscope data and magnetic data,
 Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://github.com/Shakshi3104/Logger-Watch)
 
 ### Logger for iOS
-Home | Input Info | Setting App
+Home | History | Setting App
 :-:|:-:|:-:
-![screen Phone](materials/IMG_1729.png)|![input](materials/IMG_1727.png) |![setting](materials/IMG_4338.PNG)
+![screen Phone](materials/IMG_0005.png)|![input](materials/IMG_0004.png) |![setting](materials/IMG_0007.PNG)
 
 
 ### Logger for watchOS
@@ -15,7 +15,7 @@ Home | Input Info | Setting App
 
 ## Version
 
-7.3.1
+7.4.0
 
 ## Requirements
 - iOS 14.0+
@@ -34,6 +34,8 @@ Home | Input Info | Setting App
 |7.2.0|2020/10/30| Improved UI and fixed a bug that occurs in iOS 14 |
 |7.3.0|2021/1/13|<ul><li>Implemented Extended Runtime Session (watchOS)</li><li>Stop button is only available by double tapping or long pressing (iOS)</li></ul> |
 |7.3.1|2020/1/19|Changed to send the data together after the measurement is finished |
+|7.3.2|2020/3/3|Fix a serious bug related to data saving|
+|7.4.0|2020/3/4|Add history|
 
 
 ## Logger Series
