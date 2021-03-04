@@ -184,12 +184,29 @@
 			children = (
 				CEB8DE8F254BFF10009DEB1F /* MetaData.swift */,
 				CEEF6FF124D64AF80015ED13 /* PhoneSensorLogger.swift */,
-				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
 				CEB8DE8E254BFF10009DEB1F /* SensorData.swift */,
 				CE9248ED25F091C200421DA8 /* SensorDataManager.swift */,
 				CE4612B72521D4850088CBC8 /* SensorType.swift */,
 				CEB8DE90254BFF10009DEB1F /* TimestampUtils.swift */,
 				CEBA6F3B24D6592D008194F8 /* WatchConnector.swift */,
+			);
+			path = LogMotionData;
+			sourceTree = "<group>";
+		};
+		CE92491825F0AF8800421DA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEEF6FCD24D64AB90015ED13 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE92491925F0AF9100421DA8 /* LogMotionData */ = {
+			isa = PBXGroup;
+			children = (
+				CEEF6FF324D64E4F0015ED13 /* WatchSensorLogger.swift */,
+				CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */,
+				CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */,
 			);
 			path = LogMotionData;
 			sourceTree = "<group>";
@@ -223,6 +240,7 @@
 				CE9248F225F0992200421DA8 /* View */,
 				CE63A0BA2547A4B900B65CEA /* Settings.bundle */,
 				CEEF6FA024D64AB80015ED13 /* Info.plist */,
+				CEEF6F9424D64AB50015ED13 /* SceneDelegate.swift */,
 				CEEF6F9224D64AB50015ED13 /* AppDelegate.swift */,
 				CEEF6F9824D64AB80015ED13 /* Assets.xcassets */,
 				CEEF6F9D24D64AB80015ED13 /* LaunchScreen.storyboard */,
@@ -252,7 +270,8 @@
 		CEEF6FCC24D64AB90015ED13 /* Logger7 WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CEEF6FCD24D64AB90015ED13 /* ContentView.swift */,
+				CE92491925F0AF9100421DA8 /* LogMotionData */,
+				CE92491825F0AF8800421DA8 /* View */,
 				CEEF6FCF24D64AB90015ED13 /* HostingController.swift */,
 				CEEF6FD124D64AB90015ED13 /* ExtensionDelegate.swift */,
 				CEEF6FD324D64AB90015ED13 /* NotificationController.swift */,
@@ -261,9 +280,6 @@
 				CEEF6FDC24D64ABA0015ED13 /* Info.plist */,
 				CEEF6FDD24D64ABA0015ED13 /* PushNotificationPayload.apns */,
 				CEEF6FD924D64ABA0015ED13 /* Preview Content */,
-				CEEF6FF324D64E4F0015ED13 /* WatchSensorLogger.swift */,
-				CE4612BF2521D4F70088CBC8 /* WatchSensorData.swift */,
-				CEBA6F3D24D6594A008194F8 /* PhoneConnector.swift */,
 				CE7302EB25C0062400388AAA /* ComplicationController.swift */,
 			);
 			path = "Logger7 WatchKit Extension";
