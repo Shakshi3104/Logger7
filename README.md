@@ -7,7 +7,7 @@ Logger for [iOS](https://github.com/Shakshi3104/Logger5) + [watchOS](https://git
 ### Logger for iOS
 Home | History | Setting App
 :-:|:-:|:-:
-![screen Phone](materials/IMG_0005.png)|![input](materials/IMG_0004.png) |![setting](materials/IMG_0007.PNG)
+![screen Phone](materials/IMG_0005.PNG)|![input](materials/IMG_0004.PNG) |![setting](materials/IMG_0007.PNG)
 
 
 ### Logger for watchOS
