@@ -11,7 +11,7 @@ import WatchConnectivity
 
 class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
     
-    var saver = WatchSensorData()
+    var sensorDataManager = SensorDataManager.shared
     
     // Sensor values from Apple Watch
     @Published var accX = 0.0
@@ -71,12 +71,12 @@ class WatchConnector: NSObject, ObservableObject, WCSessionDelegate {
             
             // データ保存用
             if let accAllData = message["ACC_ALL"] as? String {
-                self.saver.append(line: accAllData, sensorType: .watchAccelerometer)
+                self.sensorDataManager.append(line: accAllData, sensorType: .watchAccelerometer)
                 print("Received")
             }
             
             if let gyrAllData = message["GYR_ALL"] as? String {
-                self.saver.append(line: gyrAllData, sensorType: .watchGyroscope)
+                self.sensorDataManager.append(line: gyrAllData, sensorType: .watchGyroscope)
                 print("Received")
             }
         }

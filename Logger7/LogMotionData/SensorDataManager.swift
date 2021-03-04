@@ -29,6 +29,8 @@ class SensorDataManager: ObservableObject {
     private var phoneData = SensorData()
     private var watchData = WatchSensorData()
     
+    @Published var storedData = [SensorDataRecord]()
+    
     func append(time: String, x: Double, y: Double, z: Double, sensorType: SensorType) {
         switch sensorType {
         case .phoneAccelerometer, .phoneGyroscope, .phoneMagnetometer, .headphoneAccelerometer, .headphoneGyroscope:
@@ -55,7 +57,16 @@ class SensorDataManager: ObservableObject {
         let deviceTypes = phoneRecord.deviceTypes + (watchRecord?.deviceTypes ?? [DeviceType]())
         let time = phoneRecord.timestamp
         
+        print(deviceTypes)
+        
         let record = SensorDataRecord(timestamp: time, urls: urls, deviceTypes: deviceTypes)
+        
+        // デバイスの種類が1個以上ならURLを記録する
+        if record.deviceTypes.count > 0 {
+            self.storedData.append(record)
+        }
+        print(storedData.count)
+        
         return record
     }
     

@@ -14,7 +14,8 @@ import Combine
 class PhoneSensorManager: NSObject, ObservableObject {
     var motionManager: CMMotionManager?
     var headphoneMotionManager: CMHeadphoneMotionManager?
-    var data = SensorData()
+    
+    private var sensorDataManager = SensorDataManager.shared
     
     // iPhone
     @Published var accX = 0.0
@@ -44,7 +45,10 @@ class PhoneSensorManager: NSObject, ObservableObject {
     }
     
     @objc private func startLogSensor() {
+        let timestamp = getTimestamp()
         
+        // iPhone
+        /// Accelerometer
         if let data = motionManager?.accelerometerData {
             let x = data.acceleration.x
             let y = data.acceleration.y
@@ -60,6 +64,7 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.accZ = Double.nan
         }
         
+        /// Gyroscope
         if let data = motionManager?.gyroData {
             let x = data.rotationRate.x
             let y = data.rotationRate.y
@@ -76,6 +81,7 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.gyrZ = Double.nan
         }
         
+        /// Magnetometer
         if let data = motionManager?.magnetometerData {
             let x = data.magneticField.x
             let y = data.magneticField.y
@@ -91,7 +97,12 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.magZ = Double.nan
         }
         
+        self.sensorDataManager.append(time: timestamp, x: self.accX, y: self.accY, z: self.accZ, sensorType: .phoneAccelerometer)
+        self.sensorDataManager.append(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ, sensorType: .phoneGyroscope)
+        self.sensorDataManager.append(time: timestamp, x: self.magX, y: self.magY, z: self.magZ, sensorType: .phoneMagnetometer)
         
+        
+        // AirPods Pro
         if let data = self.headphoneMotionManager?.deviceMotion {
             let accX = data.gravity.x + data.userAcceleration.x
             let accY = data.gravity.y + data.userAcceleration.y
@@ -107,6 +118,9 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.headGyrX = gyrX
             self.headGyrY = gyrY
             self.headGyrZ = gyrZ
+            
+            self.sensorDataManager.append(time: timestamp, x: self.headAccX, y: self.headAccY, z: self.headAccZ, sensorType: .headphoneAccelerometer)
+            self.sensorDataManager.append(time: timestamp, x: self.headGyrX, y: self.headGyrY, z: self.headGyrZ, sensorType: .headphoneGyroscope)
         }
         else {
             self.headAccX = Double.nan
@@ -116,19 +130,6 @@ class PhoneSensorManager: NSObject, ObservableObject {
             self.headGyrY = Double.nan
             self.headGyrZ = Double.nan
         }
-        
-        // センサデータを記録する
-        let timestamp = getTimestamp()
-        
-        self.data.append(time: timestamp, x: self.accX, y: self.accY, z: self.accZ, sensorType: .phoneAccelerometer)
-        self.data.append(time: timestamp, x: self.gyrX, y: self.gyrY, z: self.gyrZ, sensorType: .phoneGyroscope)
-        self.data.append(time: timestamp, x: self.magX, y: self.magY, z: self.magZ, sensorType: .phoneMagnetometer)
-        
-        self.data.append(time: timestamp, x: self.headAccX, y: self.headAccY, z: self.headAccZ, sensorType: .headphoneAccelerometer)
-        self.data.append(time: timestamp, x: self.headGyrX, y: self.headGyrY, z: self.headGyrZ, sensorType: .headphoneGyroscope)
-        
-        print("head acc \(timestamp), \(self.headAccX), \(self.headAccY), \(self.headAccZ)")
-        
     }
     
     func startUpdate(_ freq: Double) {

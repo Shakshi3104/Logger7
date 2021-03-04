@@ -251,6 +251,7 @@ struct EditView: View {
     @ObservedObject var metadata: MetaData
     @ObservedObject var sensorLogger: PhoneSensorManager
     @ObservedObject var connector: WatchConnector
+    @ObservedObject var sensorDataManager = SensorDataManager.shared
     
     @State var isSharedPresent = false
     @State var isEmptyMetadata = false
@@ -278,6 +279,10 @@ struct EditView: View {
                                             errorFeedback.notificationOccurred(.error)
                                         }
                                         else {
+                                            let switchFeedback = UIImpactFeedbackGenerator(style: .heavy)
+                                            
+                                            switchFeedback.impactOccurred()
+                                            
                                             self.isSharedPresent = true
                                             self.isEmptyMetadata = false
                                         }
@@ -285,7 +290,7 @@ struct EditView: View {
                                         Image(systemName: "square.and.arrow.up")
                                     })
                                     .sheet(isPresented: $isSharedPresent, content: {
-                                        ActivityView(activityItems: sensorLogger.data.getURLs(label: metadata.label, subject: metadata.name) + connector.saver.getDataURLs(label: metadata.label, subject: metadata.name), applicationActivities: nil)
+                                        ActivityView(activityItems: sensorDataManager.getURLs(label: metadata.label, subject: metadata.name), applicationActivities: nil)
                                     })
                                     .alert(isPresented: $isEmptyMetadata, content: {
                                         Alert(title: Text("保存できません"), message: Text("Subject NameとLabelを入力してください"))

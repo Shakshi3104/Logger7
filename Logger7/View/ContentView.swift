@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LogView()
+        TabView {
+            LogView().tabItem {
+                Image(systemName: "gyroscope")
+                Text("Log Motion")
+            }
+            
+            HistoryView().tabItem {
+                Image(systemName: "clock")
+                Text("History")
+            }
+        }
     }
 }
 
