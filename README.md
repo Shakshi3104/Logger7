@@ -15,7 +15,7 @@ Home | History | Setting App
 
 ## Version
 
-7.4.0
+7.4.1
 
 ## Requirements
 - iOS 14.0+
@@ -36,6 +36,7 @@ Home | History | Setting App
 |7.3.1|2020/1/19|Changed to send the data together after the measurement is finished |
 |7.3.2|2020/3/3|Fix a serious bug related to data saving|
 |7.4.0|2020/3/4|Add history|
+|7.4.1|2020/3/5|Add received status of data transfered by Apple Watch |
 
 
 ## Logger Series
