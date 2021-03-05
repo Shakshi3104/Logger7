@@ -137,14 +137,8 @@ struct LogView: View {
                 HStack {
                     Image(systemName: "speedometer")
                     Spacer()
-                    Text(String(format: "%.3f", connector.accX))
-                        .multilineTextAlignment(.leading)
+                    Text(connector.isReceivedAccData ? "Received": "Not received")
                     Spacer()
-                    Text(String(format: "%.3f", connector.accY))
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                    Text(String(format: "%.3f", connector.accZ))
-                        .multilineTextAlignment(.leading)
                 }
                 .padding(.horizontal, 30)
                 .padding(.vertical, 2)
@@ -152,14 +146,8 @@ struct LogView: View {
                 HStack {
                     Image(systemName: "gyroscope")
                     Spacer()
-                    Text(String(format: "%.3f", connector.gyrX))
-                        .multilineTextAlignment(.leading)
+                    Text(connector.isReceivedGyrData ? "Received": "Not received")
                     Spacer()
-                    Text(String(format: "%.3f", connector.gyrY))
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                    Text(String(format: "%.3f", connector.gyrZ))
-                        .multilineTextAlignment(.leading)
                 }
                 .padding(.horizontal, 30)
                 .padding(.vertical, 2)
@@ -285,6 +273,9 @@ struct EditView: View {
                                             
                                             self.isSharedPresent = true
                                             self.isEmptyMetadata = false
+                                            
+                                            self.connector.isReceivedAccData = false
+                                            self.connector.isReceivedGyrData = false
                                         }
                                     }, label: {
                                         Image(systemName: "square.and.arrow.up")

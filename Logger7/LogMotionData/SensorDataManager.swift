@@ -73,6 +73,12 @@ class SensorDataManager: ObservableObject {
     func getURLs(label: String, subject: String) -> [URL] {
         let record: SensorDataRecord = getURLs(label: label, subject: subject)
         
+        // recordのurlsが空の場合は最新のデータを返す
+        if record.urls.count == 0 {
+            let recordLast = storedData.last!
+            return recordLast.urls
+        }
+        
         return record.urls
     }
 }
