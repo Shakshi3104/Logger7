@@ -90,6 +90,7 @@
 		CE63A0BA2547A4B900B65CEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CE7302EB25C0062400388AAA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CE77028E24D696A900794923 /* IMG_4157.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4157.PNG; sourceTree = "<group>"; };
+		CE90E55525F1F44100850C66 /* IMG_0009.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0009.PNG; sourceTree = "<group>"; };
 		CE9248ED25F091C200421DA8 /* SensorDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataManager.swift; sourceTree = "<group>"; };
 		CE9248F425F0997000421DA8 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CE9248FF25F0A26B00421DA8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				CE92490625F0AD1C00421DA8 /* IMG_0005.PNG */,
 				CE92490725F0AD1C00421DA8 /* IMG_0006.PNG */,
 				CE92490525F0AD1C00421DA8 /* IMG_0007.PNG */,
+				CE90E55525F1F44100850C66 /* IMG_0009.PNG */,
 				CEB8DEAF254C082A009DEB1F /* IMG_0749.png */,
 				CEB8DEA5254C072F009DEB1F /* IMG_4338.PNG */,
 				CEB8DEA6254C072F009DEB1F /* IMG_4339.PNG */,
