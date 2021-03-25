@@ -75,6 +75,11 @@ class SensorDataManager: ObservableObject {
         
         // recordのurlsが空の場合は最新のデータを返す
         if record.urls.count == 0 {
+            // storedDataが空の場合は空のリストを返す
+            if storedData.count == 0 {
+                return [URL]()
+            }
+            
             let recordLast = storedData.last!
             return recordLast.urls
         }
