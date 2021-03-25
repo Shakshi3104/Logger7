@@ -244,6 +244,9 @@ struct EditView: View {
     @State var isSharedPresent = false
     @State var isEmptyMetadata = false
     
+    private let labels = TrampolineActivity.allCases.map { $0.rawValue }
+    @State var label = 0
+    
     var body: some View {
         NavigationView {
             Form {
@@ -252,13 +255,27 @@ struct EditView: View {
                 }
                 
                 Section(header: Text("What's label?")) {
-                    TextField("Label", text: $metadata.label)
+//                    TextField("Label", text: $metadata.label)
+                    Menu(content: {
+                        Picker(selection: $label, label: Text("Label"), content: {
+                            ForEach(0..<labels.count) { num in
+                                Text(labels[num])
+                            }
+                        })
+                    }, label: {
+                        Text(labels[label])
+                    })
+                    .onTapGesture {
+                        let switchFeedback = UIImpactFeedbackGenerator(style: .light)
+                        
+                        switchFeedback.impactOccurred()
+                    }
                 }
             }
             .navigationBarTitle("Send Data", displayMode: .inline)
             .navigationBarItems(leading:
                                     Button(action: {
-                                        if metadata.name.isEmpty || metadata.label.isEmpty {
+                                        if metadata.name.isEmpty {
                                             self.isSharedPresent = false
                                             self.isEmptyMetadata = true
                                             
@@ -281,10 +298,10 @@ struct EditView: View {
                                         Image(systemName: "square.and.arrow.up")
                                     })
                                     .sheet(isPresented: $isSharedPresent, content: {
-                                        ActivityView(activityItems: sensorDataManager.getURLs(label: metadata.label, subject: metadata.name), applicationActivities: nil)
+                                        ActivityView(activityItems: sensorDataManager.getURLs(label: labels[label], subject: metadata.name), applicationActivities: nil)
                                     })
                                     .alert(isPresented: $isEmptyMetadata, content: {
-                                        Alert(title: Text("保存できません"), message: Text("Subject NameとLabelを入力してください"))
+                                        Alert(title: Text("保存できません"), message: Text("Subject Nameを入力してください"))
                                     }),
                                 trailing:
                                     Button(action: {
