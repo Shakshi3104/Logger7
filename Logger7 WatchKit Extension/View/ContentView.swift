@@ -59,9 +59,9 @@ struct ContentView: View {
                 HStack {
                     Text(String(format: "%.2f", self.sensorLogger.gyrX))
                     Spacer()
-                    Text(String(format: "%.2f", self.sensorLogger.gyrX))
+                    Text(String(format: "%.2f", self.sensorLogger.gyrY))
                     Spacer()
-                    Text(String(format: "%.2f", self.sensorLogger.gyrX))
+                    Text(String(format: "%.2f", self.sensorLogger.gyrZ))
                 }.padding(.horizontal)
                 }
 
