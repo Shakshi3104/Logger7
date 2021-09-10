@@ -77,8 +77,13 @@ struct LogView: View {
             // センサ値の表示
             VStack {
                 HStack {
-                    Image(systemName: "iphone")
-                    Text("iPhone").font(.headline)
+                    if UIDevice.current.userInterfaceIdiom == .phone {
+                        Image(systemName: "iphone")
+                        Text("iPhone").font(.headline)
+                    } else if UIDevice.current.userInterfaceIdiom == .pad {
+                        Image(systemName: "ipad")
+                        Text("iPad").font(.headline)
+                    }
                 }
                 
                 HStack {
