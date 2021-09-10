@@ -128,32 +128,34 @@ struct LogView: View {
             }
             .padding(.vertical, 10)
             
-            VStack {
-                HStack {
-                    Image(systemName: "applewatch")
-                    Text("Watch").font(.headline)
+            if UIDevice.current.userInterfaceIdiom != .pad {
+                VStack {
+                    HStack {
+                        Image(systemName: "applewatch")
+                        Text("Watch").font(.headline)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "speedometer")
+                        Spacer()
+                        Text(connector.isReceivedAccData ? "Received": "Not received")
+                        Spacer()
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 2)
+                    
+                    HStack {
+                        Image(systemName: "gyroscope")
+                        Spacer()
+                        Text(connector.isReceivedGyrData ? "Received": "Not received")
+                        Spacer()
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 2)
+                    
                 }
-                
-                HStack {
-                    Image(systemName: "speedometer")
-                    Spacer()
-                    Text(connector.isReceivedAccData ? "Received": "Not received")
-                    Spacer()
-                }
-                .padding(.horizontal, 30)
-                .padding(.vertical, 2)
-                
-                HStack {
-                    Image(systemName: "gyroscope")
-                    Spacer()
-                    Text(connector.isReceivedGyrData ? "Received": "Not received")
-                    Spacer()
-                }
-                .padding(.horizontal, 30)
-                .padding(.vertical, 2)
-                
+                .padding(.vertical, 10)
             }
-            .padding(.vertical, 10)
             
             VStack {
                 HStack {
